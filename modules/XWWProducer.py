@@ -1,3 +1,4 @@
+from re import I
 import ROOT
 from ROOT import TLorentzVector
 ROOT.PyConfig.IgnoreCommandLineOptions = True
@@ -367,6 +368,19 @@ class VVVProducer(Module):
 
         self.out.branch("PassggF", "I")
         self.out.branch("PassVBF", "I")
+        self.out.branch("nLooseMuons","I")
+        self.out.branch("nLooseMiniMuons", "I")
+        self.out.branch("nMidMiniMuons", "I")
+        self.out.branch("nTightMiniMuons", "I")
+        self.out.branch("nVeryTightMiniMuons", "I")
+        self.out.branch("nLooseEle","I")
+        self.out.branch("nLooseMiniEle", "I")
+        self.out.branch("nTightMiniEle", "I")
+
+        self.out.branch("nLooseUCSDMuons","I")
+        self.out.branch("ngoodUCSDMuons", "I")
+        self.out.branch("nLooseUCSDEle","I")
+        self.out.branch("ngoodUCSDEle", "I")
 
         self.is_mc = bool(inputTree.GetBranch("GenJet_pt"))
 
@@ -422,6 +436,36 @@ class VVVProducer(Module):
         muons = Collection(event, 'Muon')
         muon_v4_temp=TLorentzVector()
         looseMuons = []
+        looseMiniMuons = []
+        midMiniMuons = []
+        tightMiniMuons = []
+        verytightMiniMuons = []
+
+        looseUCSDMuons = []
+        goodUCSDMuons = []
+
+
+        for imu in range(0, event.nMuon):
+            if (event.Muon_looseId[imu] and abs(muons[imu].eta)<2.4 and ((event.Muon_corrected_pt[imu]>30 and event.Muon_pfRelIso04_all[imu] < 0.25) or event.Muon_corrected_pt>55)):# to be checked
+                muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
+                looseUCSDMuons.append(muon_v4_temp.Clone())
+        nLooseUCSDMuons = len(looseUCSDMuons)
+        self.out.fillBranch("nLooseUCSDMuons"  ,nLooseUCSDMuons )
+
+        for imu in range(0, event.nMuon):
+            if (event.Muon_mediumId[imu] and abs(event.Muon_dz[imu]) < 0.1 and abs(event.Muon_dxy[imu])<0.05 and abs(muons[imu].eta)<2.4 and event.Muon_sip3d[imu]<4 and event.Muon_corrected_pt[imu]>30):# to be checked
+                muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
+                goodUCSDMuons.append(muon_v4_temp.Clone())
+        ngoodUCSDMuons = len(goodUCSDMuons)
+        self.out.fillBranch("ngoodUCSDMuons"  ,ngoodUCSDMuons )
+
+
+
+
+
+
+
+
         for imu in range(0, event.nMuon):
             if (event.Muon_highPtId[imu]=='\x02' and event.Muon_tkRelIso[imu] <0.1 and abs(muons[imu].eta)<2.4 and event.Muon_corrected_pt[imu]>20):# to be checked
                 trackIso,muisolation=event.Muon_tkRelIso[imu],event.Muon_pfRelIso04_all[imu]
@@ -429,18 +473,105 @@ class VVVProducer(Module):
                 lep_pt,lep_eta,lep_phi,lep_m=event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass
                 looseMuons.append(muon_v4_temp.Clone())
         nLooseMu = len(looseMuons)
+        self.out.fillBranch("nLooseMuons"  ,nLooseMu )
+
+        for imu in range(0, event.nMuon):
+            if (event.Muon_highPtId[imu]=='\x02' and event.Muon_miniPFRelIso_all[imu] <0.4 and abs(muons[imu].eta)<2.4 and event.Muon_corrected_pt[imu]>20):# to be checked
+                trackIso,muisolation=event.Muon_tkRelIso[imu],event.Muon_miniPFRelIso_all[imu]
+                muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
+                lep_pt,lep_eta,lep_phi,lep_m=event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass
+                looseMiniMuons.append(muon_v4_temp.Clone())
+        nLooseMiniMu = len(looseMiniMuons)
+        self.out.fillBranch("nLooseMiniMuons"  ,nLooseMiniMu )
+
+        for imu in range(0, event.nMuon):
+            if (event.Muon_highPtId[imu]=='\x02' and event.Muon_miniPFRelIso_all[imu] <0.2 and abs(muons[imu].eta)<2.4 and event.Muon_corrected_pt[imu]>20):# to be checked
+                trackIso,muisolation=event.Muon_tkRelIso[imu],event.Muon_miniPFRelIso_all[imu]
+                muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
+                lep_pt,lep_eta,lep_phi,lep_m=event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass
+                midMiniMuons.append(muon_v4_temp.Clone())
+        nMidMiniMu = len(midMiniMuons)
+        self.out.fillBranch("nMidMiniMuons"  ,nMidMiniMu )
+
+        for imu in range(0, event.nMuon):
+            if (event.Muon_highPtId[imu]=='\x02' and event.Muon_miniPFRelIso_all[imu] <0.1 and abs(muons[imu].eta)<2.4 and event.Muon_corrected_pt[imu]>20):# to be checked
+                trackIso,muisolation=event.Muon_tkRelIso[imu],event.Muon_miniPFRelIso_all[imu]
+                muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
+                lep_pt,lep_eta,lep_phi,lep_m=event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass
+                tightMiniMuons.append(muon_v4_temp.Clone())
+        nTightMiniMu = len(tightMiniMuons)
+        self.out.fillBranch("nTightMiniMuons"  ,nTightMiniMu )
+
+        for imu in range(0, event.nMuon):
+            if (event.Muon_highPtId[imu]=='\x02' and event.Muon_miniPFRelIso_all[imu] <0.05 and abs(muons[imu].eta)<2.4 and event.Muon_corrected_pt[imu]>20):# to be checked
+                trackIso,muisolation=event.Muon_tkRelIso[imu],event.Muon_miniPFRelIso_all[imu]
+                muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
+                lep_pt,lep_eta,lep_phi,lep_m=event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass
+                verytightMiniMuons.append(muon_v4_temp.Clone())
+        nVeryTightMiniMu = len(verytightMiniMuons)
+        self.out.fillBranch("nVeryTightMiniMuons"  ,nVeryTightMiniMu )
+
+
+
 
         electrons = Collection(event, 'Electron')
         electron_v4_temp=TLorentzVector()
         looseElectrons = []
+        looseMiniElectrons = []
+        TightMiniElectrons = []
+
+        looseUCSDElectrons = []
+        goodUCSDElectrons = []
+
         for iele in range(0, event.nElectron):
             if (event.Electron_cutBased_HEEP[iele] and abs(electrons[iele].eta)<2.5 and electrons[iele].pt>35):
                 electron_v4_temp.SetPtEtaPhiM(electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass)
                 lep_pt,lep_eta,lep_phi,lep_m=electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass
                 looseElectrons.append(electron_v4_temp.Clone())
         nLooseEle = len(looseElectrons)
+        self.out.fillBranch("nLooseEle"  ,nLooseEle )
 
-        if not ((nLooseEle+nLooseMu)==0): return False
+        looseElectrons = []
+        for iele in range(0, event.nElectron):
+            if (event.Electron_cutBased_HEEP[iele] and abs(electrons[iele].eta)<2.5 and electrons[iele].pt>35 and event.Electron_miniPFRelIso_all[iele]<0.4):
+                electron_v4_temp.SetPtEtaPhiM(electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass)
+                lep_pt,lep_eta,lep_phi,lep_m=electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass
+                looseMiniElectrons.append(electron_v4_temp.Clone())
+        nMiniLooseEle = len(looseMiniElectrons)
+        self.out.fillBranch("nLooseMiniEle"  ,nMiniLooseEle )
+
+        looseElectrons = []
+        for iele in range(0, event.nElectron):
+            if (event.Electron_cutBased_HEEP[iele] and abs(electrons[iele].eta)<2.5 and electrons[iele].pt>35 and event.Electron_miniPFRelIso_all[iele]<0.1):
+                electron_v4_temp.SetPtEtaPhiM(electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass)
+                lep_pt,lep_eta,lep_phi,lep_m=electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass
+                TightMiniElectrons.append(electron_v4_temp.Clone())
+        nMiniTightEle = len(TightMiniElectrons)
+        self.out.fillBranch("nTightMiniEle"  ,nMiniTightEle )
+
+
+
+
+
+        for iele in range(0, event.nElectron):
+            if ( ( (electrons[iele].pt>38 and event.Electron_pfRelIso03_all[iele]<0.25) or electrons[iele].pt>120 ) and abs(electrons[iele].eta)<2.4 and (abs(electrons[iele].eta)<1.44 or abs(electrons[iele].eta)>1.57) and event.Electron_cutBased >= 2):
+                electron_v4_temp.SetPtEtaPhiM(electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass)
+                looseUCSDElectrons.append(electron_v4_temp.Clone())
+        nLooseUCSDEle = len(looseUCSDElectrons)
+        self.out.fillBranch("nLooseUCSDEle"  ,nLooseUCSDEle )
+
+
+        for iele in range(0, event.nElectron):
+            if ( electrons[iele].pt>38 and event.Electron_mvaFall17V2noIso_WP90[iele] and abs(electrons[iele].eta)<2.4 and (abs(electrons[iele].eta)<1.44 or abs(electrons[iele].eta)>1.57) and event.Electron_sip3d <=4 and abs(event.Electron_dz[imu]) < 0.1 and abs(event.Electron_dxy[imu])<0.05):
+                electron_v4_temp.SetPtEtaPhiM(electrons[iele].pt, electrons[iele].eta, electrons[iele].phi, electrons[iele].mass)
+                goodUCSDElectrons.append(electron_v4_temp.Clone())
+        ngoodUCSDEle = len(goodUCSDElectrons)
+        self.out.fillBranch("ngoodUCSDEle"  ,ngoodUCSDEle )
+
+
+
+
+        # if not ((nLooseEle+nLooseMu)==0): return False
             
         FatJets = []
         fatjets = Collection(event, 'FatJet')
