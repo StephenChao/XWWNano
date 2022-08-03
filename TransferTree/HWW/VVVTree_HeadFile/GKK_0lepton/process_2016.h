@@ -209,9 +209,14 @@ void EDBR2PKUTree::FatJets_P4_HWWH4q_Order_2016() {
 }
 
 void EDBR2PKUTree::METf_2016() {
-    MET_et_NoXYCorr = MET_pt ;
-    MET_phi_NoXYCorr = MET_phi ;
-
+   if(IsData == 0){
+        MET_et_NoXYCorr  = MET_pt ;
+        MET_phi_NoXYCorr = MET_phi ;
+    }
+    else{
+        MET_et_NoXYCorr  = MET_T1Smear_pt ;
+        MET_phi_NoXYCorr = MET_T1Smear_phi ;
+    }
     int  runnb = 0 ;
     bool isMC  = true ;
     if(IsData == 0){
@@ -232,7 +237,8 @@ void EDBR2PKUTree::METf_2016() {
     if( YEAR_g.Contains("2018") ){
         year = "2018";
     }
-    std::pair<double,double> MET_T1Smear_XYcorr = METXYCorr_Met_MetPhi( MET_pt, MET_phi, runnb, year, isMC, PV_npvs, true);
+    std::pair<double,double> MET_T1Smear_XYcorr = METXYCorr_Met_MetPhi( MET_et_NoXYCorr, MET_phi_NoXYCorr, runnb, year, isMC, PV_npvs, true);
+
     MET_et  = MET_T1Smear_XYcorr.first; 
     MET_phi = MET_T1Smear_XYcorr.second;
 }
