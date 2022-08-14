@@ -84,6 +84,109 @@ void EDBR2PKUTree::Radion_Matching() {
 
 }
 
+void EDBR2PKUTree::Higgs_Matching() {
+    R4q_max=-99,R3q_max=-99,R2q_max=-99,Rlqq_max=-99,Rlq_max=-99,w_max=-99,u_max=-99;
+    R4q_min=-99,R3q_min=-99,R2q_min=-99,Rlqq_min=-99,Rlq_min=-99,w_min=-99,u_min=-99;
+    gKK_g_max = -99;
+    gKK_g_min = -99;
+    R3q_taudecay_max = -99;
+    R2q_qq_taudecay_max = -99;
+    R2q_qtau_taudecay_max = -99;
+    R2q_tautau_taudecay_max = -99;
+    Rlqq_emu_taudecay_max = -99;
+    Rlqq_tau_taudecay_max = -99;
+    Rlq_taudecay_max = -99;
+    w_taudecay_max = -99;
+    u_taudecay_max = -99;
+    R3q_taudecay_min = -99;
+    R2q_qq_taudecay_min = -99;
+    R2q_qtau_taudecay_min = -99;
+    R2q_tautau_taudecay_min = -99;
+    Rlqq_emu_taudecay_min = -99;
+    Rlqq_tau_taudecay_min = -99;
+    Rlq_taudecay_min = -99;
+    w_taudecay_min = -99;
+    u_taudecay_min = -99;
+    R3q_tauhad_max = -99;
+    R2q_qtau_tauhad_max = -99;
+    R2q_tautau_tauhad_max = -99;
+    Rlqq_emu_tauhad_max = -99;
+    Rlq_tauhad_max = -99;
+    w_tauhad_max = -99;
+    u_tauhad_max = -99;
+    R3q_tauhad_min = -99;
+    R2q_qtau_tauhad_min = -99;
+    R2q_tautau_tauhad_min = -99;
+    Rlqq_emu_tauhad_min = -99;
+    Rlq_tauhad_min = -99;
+    w_tauhad_min = -99;
+    u_tauhad_min = -99;
+
+    R3q_td_max = -99;
+    rest_td_max = -99;
+    R2q_Rlqq_td_max = -99;
+    R3q_td_min = -99;
+    rest_td_min = -99;
+    R2q_Rlqq_td_min = -99;
+
+    R4q_mid=-99,R3q_mid=-99,R2q_mid=-99,Rlqq_mid=-99,Rlq_mid=-99,w_mid=-99,u_mid=-99;
+    gKK_g_mid = -99;
+    R3q_taudecay_mid = -99;
+    R2q_qq_taudecay_mid = -99;
+    R2q_qtau_taudecay_mid = -99;
+    R2q_tautau_taudecay_mid = -99;
+    Rlqq_emu_taudecay_mid = -99;
+    Rlqq_tau_taudecay_mid = -99;
+    Rlq_taudecay_mid = -99;
+    w_taudecay_mid = -99;
+    u_taudecay_mid = -99;
+    R3q_tauhad_mid = -99;
+    R2q_qtau_tauhad_mid = -99;
+    R2q_tautau_tauhad_mid = -99;
+    Rlqq_emu_tauhad_mid = -99;
+    Rlq_tauhad_mid = -99;
+    w_tauhad_mid = -99;
+    u_tauhad_mid = -99;
+    R3q_td_mid = -99;
+    rest_td_mid = -99;
+    R2q_Rlqq_td_mid = -99;
+
+    gKK_g_max = -99;
+    gKK_g_min = -99;
+    gKK_g_mid = -99;
+
+    z_max = -99;
+    z_mid = -99;
+    z_min = -99;
+
+    
+    // gKK_g_Matching(); // this has to run first
+    Radion_Matching_taulep(); // this has to run second
+    Radion_Matching_taudecay();
+    Higgs_Matching_HWW_Ordered();
+
+}
+
+
+
+
+
+
+
+/////////////////
+
+
+//subfuntion with DECO.
+
+
+/////////////////
+
+
+
+
+
+
+
 void EDBR2PKUTree::Radion_Matching_taulep() {
 
     double dr_WJ=1111110.6;
@@ -810,6 +913,83 @@ void EDBR2PKUTree::Radion_Matching_deepW_Ordered(){
         R3q_taudecay_a = R3q_taudecay_sort[indexTag[0]] ; R3q_taudecay_b = R3q_taudecay_sort[indexTag[1]] ; R3q_taudecay_c = R3q_taudecay_sort[indexTag[2]] ;
     }
 }
+
+
+
+void EDBR2PKUTree::Higgs_Matching_HWW_Ordered(){
+
+
+    R4q_a = -99; R4q_b = -99; R4q_c = -99;
+    R3q_a = -99; R3q_b = -99; R3q_c = -99;
+    R2q_a = -99; R2q_b = -99; R2q_c = -99;
+    w_a = -99; w_b = -99; w_c = -99;
+    z_a = -99; z_b = -99; z_c = -99;
+    Rlqq_a = -99; Rlqq_b = -99; Rlqq_c = -99;
+    Rlq_a = -99; Rlq_b = -99; Rlq_c = -99;
+    gKK_g_a = -99; gKK_g_b = -99; gKK_g_c = -99;
+    u_a = -99; u_b = -99; u_c = -99;
+    R3q_taudecay_a = -99; R3q_taudecay_b = -99; R3q_taudecay_c = -99;
+
+    if( PTj_2 > 0 && PTj_3 < 0){
+        Int_t *indexTag=new Int_t[2];
+        Double_t HWWTagger_sort[2] = { deepHWWMDV1_HallvsQCD_max , deepHWWMDV1_HallvsQCD_min };
+        TMath::Sort(2, HWWTagger_sort, indexTag, 1);
+
+        Int_t R4q_sort[2] = { R4q_max , R4q_min }; 
+        Int_t R3q_sort[2] = { R3q_max , R3q_min }; 
+        Int_t R2q_sort[2] = { R2q_max , R2q_min }; 
+        Int_t w_sort[2] = { w_max , w_min }; 
+        Int_t z_sort[2] = { z_max , z_min }; 
+        Int_t Rlqq_sort[2] = { Rlqq_max , Rlqq_min }; 
+        Int_t Rlq_sort[2] = { Rlq_max , Rlq_min }; 
+        Int_t gKK_g_sort[2] = { gKK_g_max , gKK_g_min }; 
+        Int_t u_sort[2] = { u_max , u_min }; 
+        Int_t R3q_taudecay_sort[2] = { R3q_taudecay_max , R3q_taudecay_min }; 
+
+        R4q_a = R4q_sort[indexTag[0]] ; R4q_c = R4q_sort[indexTag[1]] ;
+        R3q_a = R3q_sort[indexTag[0]] ; R3q_c = R3q_sort[indexTag[1]] ;
+        R2q_a = R2q_sort[indexTag[0]] ; R2q_c = R2q_sort[indexTag[1]] ;
+        z_a = z_sort[indexTag[0]] ; z_c = z_sort[indexTag[1]] ;
+        w_a = w_sort[indexTag[0]] ; w_c = w_sort[indexTag[1]] ;
+        Rlqq_a = Rlqq_sort[indexTag[0]] ; Rlqq_c = Rlqq_sort[indexTag[1]] ;
+        Rlq_a = Rlq_sort[indexTag[0]] ; Rlq_c = Rlq_sort[indexTag[1]] ;
+        gKK_g_a = gKK_g_sort[indexTag[0]] ; gKK_g_c = gKK_g_sort[indexTag[1]] ;
+        u_a = u_sort[indexTag[0]] ; u_c = u_sort[indexTag[1]] ;
+        R3q_taudecay_a = R3q_taudecay_sort[indexTag[0]] ; R3q_taudecay_c = R3q_taudecay_sort[indexTag[1]] ;
+    }
+
+    if( PTj_3 > 0 && PTj_4 < 0){
+        Int_t *indexTag=new Int_t[3];
+        Double_t HWWTagger_sort[3] = { deepHWWMDV1_HallvsQCD_max , deepHWWMDV1_HallvsQCD_mid, deepHWWMDV1_HallvsQCD_min };
+        TMath::Sort(3, HWWTagger_sort, indexTag, 1);
+
+        Int_t R4q_sort[3] = { R4q_max , R4q_mid , R4q_min }; 
+        Int_t R3q_sort[3] = { R3q_max , R3q_mid , R3q_min }; 
+        Int_t R2q_sort[3] = { R2q_max , R2q_mid , R2q_min }; 
+        Int_t w_sort[3] = { w_max , w_mid , w_min }; 
+        Int_t z_sort[3] = { z_max , z_mid , z_min }; 
+        Int_t Rlqq_sort[3] = { Rlqq_max , Rlqq_mid , Rlqq_min }; 
+        Int_t Rlq_sort[3] = { Rlq_max , Rlq_mid , Rlq_min }; 
+        Int_t gKK_g_sort[3] = { gKK_g_max , gKK_g_mid , gKK_g_min }; 
+        Int_t u_sort[3] = { u_max , u_mid , u_min }; 
+        Int_t R3q_taudecay_sort[3] = { R3q_taudecay_max , R3q_taudecay_mid , R3q_taudecay_min }; 
+
+        R4q_a = R4q_sort[indexTag[0]] ; R4q_b = R4q_sort[indexTag[1]] ; R4q_c = R4q_sort[indexTag[2]] ;
+        R3q_a = R3q_sort[indexTag[0]] ; R3q_b = R3q_sort[indexTag[1]] ; R3q_c = R3q_sort[indexTag[2]] ;
+        R2q_a = R2q_sort[indexTag[0]] ; R2q_b = R2q_sort[indexTag[1]] ; R2q_c = R2q_sort[indexTag[2]] ;
+        w_a = w_sort[indexTag[0]] ; w_b = w_sort[indexTag[1]] ; w_c = w_sort[indexTag[2]] ;
+        z_a = w_sort[indexTag[0]] ; z_b = w_sort[indexTag[1]] ; z_c = w_sort[indexTag[2]] ;
+        Rlqq_a = Rlqq_sort[indexTag[0]] ; Rlqq_b = Rlqq_sort[indexTag[1]] ; Rlqq_c = Rlqq_sort[indexTag[2]] ;
+        Rlq_a = Rlq_sort[indexTag[0]] ; Rlq_b = Rlq_sort[indexTag[1]] ; Rlq_c = Rlq_sort[indexTag[2]] ;
+        gKK_g_a = gKK_g_sort[indexTag[0]] ; gKK_g_b = gKK_g_sort[indexTag[1]] ; gKK_g_c = gKK_g_sort[indexTag[2]] ;
+        u_a = u_sort[indexTag[0]] ; u_b = u_sort[indexTag[1]] ; u_c = u_sort[indexTag[2]] ;
+        R3q_taudecay_a = R3q_taudecay_sort[indexTag[0]] ; R3q_taudecay_b = R3q_taudecay_sort[indexTag[1]] ; R3q_taudecay_c = R3q_taudecay_sort[indexTag[2]] ;
+    }
+}
+
+
+
+
 
 #endif
 

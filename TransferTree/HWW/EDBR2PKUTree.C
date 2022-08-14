@@ -30,8 +30,11 @@ Double_t detlaR (Double_t eta1,Double_t eta2,Double_t phi1,Double_t phi2)
 #include "VVVTree_HeadFile/VVVTree_AK8_Pt_Order.h"
 #include "VVVTree_HeadFile/VVVTree_AK8_deep_W_Order.h"
 #include "VVVTree_HeadFile/GenParticles.h"
+
+
 #include "VVVTree_HeadFile/VVVTree_GenMatching.h"
 #include "VVVTree_HeadFile/VVVTree_signal_DECO.h"
+//For HWW gen-Matching
 // for HWW 
 
 
@@ -169,10 +172,10 @@ void EDBR2PKUTree::Loop(TString channelname, Double_t XS, Int_t IsData_, Float_t
             Weightf(XS, Nevents, LUMI);
 
             if (IsData_ > 0){
-                GenMatching(jentry);
+                GenMatching_HWW(jentry);
             }
             if (IsData_ == 1000){
-                Radion_Matching();
+                Higgs_Matching();
             }
 
             if ( Fill ){

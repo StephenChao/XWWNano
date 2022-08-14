@@ -132,14 +132,26 @@ class EDBR2PKUTree {
    vector<size_t> GenParticles_Daughterindex(size_t Genpart_index);
    int GenParticles_Lastcopy(size_t Genpart_index);
    int GenParticles_Firstcopy(size_t Genpart_index);
-   void GenMatching(Long64_t jentry);
+   void GenMatching(Long64_t jentry) ;
+   void GenMatching_HWW(Long64_t jentry);
+
    void loadGenpart(Long64_t jentry);
    void GenParticles();
+   void GenParticles_HWW();
+   
    void Radion_Matching();
    void Radion_Matching_taulep();
    void gKK_g_Matching();
    void Radion_Matching_taudecay();
    void Radion_Matching_deepW_Ordered();
+
+   //HWW ordering.
+   void Higgs_Matching();
+   void Higgs_Matching_taulep();
+   void Higgs_Matching_taudecay();
+   void Higgs_Matching_HWW_Ordered();
+
+
    void Outputbranches();
    bool Filter_Events(TString YEAR, Int_t IS_Data);
    bool Filter_Events_HWW(TString YEAR, Int_t IS_Data);
@@ -2100,6 +2112,13 @@ Float_t        Phij_min;
 Float_t        DPhi_max_mid;
 Float_t        DPhi_mid_min;
 Float_t        DPhi_min_max;
+
+Float_t        deepHWWMDV1_HallvsQCD_max;
+Float_t        deepHWWMDV1_HallvsQCD_mid;
+Float_t        deepHWWMDV1_HallvsQCD_min;
+
+
+
 
 Float_t        DEta_max_mid;
 Float_t        DEta_mid_min;

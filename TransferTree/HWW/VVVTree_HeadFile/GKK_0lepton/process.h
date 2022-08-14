@@ -179,18 +179,24 @@ void EDBR2PKUTree::FatJets_P4_MASSOrder() {
     Phij_max = FatJets.Get("Mass","phi", 0);
     Mj_max   = FatJets.Get("Mass","msoftdrop_nom_noJWS", 0);
     Mj_corr_max   = FatJets.Get("Mass","msoftdrop_nom", 0);
+    deepHWWMDV1_HallvsQCD_max = FatJets.Get("Mass","deepHWWMDV1_HallvsQCD",0); 
 
     PTj_mid  = FatJets.Get("Mass","pt_nom" , 1);
     Etaj_mid = FatJets.Get("Mass","eta", 1);
     Phij_mid = FatJets.Get("Mass","phi", 1);
     Mj_mid   = FatJets.Get("Mass","msoftdrop_nom_noJWS", 1);
     Mj_corr_mid   = FatJets.Get("Mass","msoftdrop_nom", 1);
+    deepHWWMDV1_HallvsQCD_mid = FatJets.Get("Mass","deepHWWMDV1_HallvsQCD",1); 
 
     PTj_min  = FatJets.Get("Mass","pt_nom" , 2);
     Etaj_min = FatJets.Get("Mass","eta", 2);
     Phij_min = FatJets.Get("Mass","phi", 2);
     Mj_min   = FatJets.Get("Mass","msoftdrop_nom_noJWS", 2);
     Mj_corr_min   = FatJets.Get("Mass","msoftdrop_nom", 2);
+    deepHWWMDV1_HallvsQCD_min = FatJets.Get("Mass","deepHWWMDV1_HallvsQCD",2); 
+
+
+
 }
 
 void EDBR2PKUTree::FatJets_P4_DEEP_MD_W_Order() {
@@ -345,7 +351,7 @@ void EDBR2PKUTree::FatJets_PNet_MD_W_Order() {
     FatJet_tau4_Pnetc = FatJets.Get("PNet-W-MD","tau4",2);
 }
 
-//New tagger.
+//New tagger, actually general HWW tagger order.
 void EDBR2PKUTree::FatJets_P4_HWWH4q_Order() {
     PTj_HWWa  = FatJets.Get("HWW-H4q-MD","pt_nom" , 0);
     Etaj_HWWa = FatJets.Get("HWW-H4q-MD","eta", 0);

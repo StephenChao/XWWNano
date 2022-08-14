@@ -145,16 +145,19 @@ void EDBR2PKUTree::FatJets_P4_MASSOrder_2016() {
     Etaj_max = FatJets.Get("Mass","eta", 0);
     Phij_max = FatJets.Get("Mass","phi", 0);
     Mj_max   = FatJets.Get("Mass","msoftdrop", 0);
+    deepHWWMDV1_HallvsQCD_max = FatJets.Get("Mass","deepHWWMDV1_HallvsQCD",0); 
 
     PTj_mid  = FatJets.Get("Mass","pt" , 1);
     Etaj_mid = FatJets.Get("Mass","eta", 1);
     Phij_mid = FatJets.Get("Mass","phi", 1);
     Mj_mid   = FatJets.Get("Mass","msoftdrop", 1);
+    deepHWWMDV1_HallvsQCD_mid = FatJets.Get("Mass","deepHWWMDV1_HallvsQCD",1); 
 
     PTj_min  = FatJets.Get("Mass","pt" , 2);
     Etaj_min = FatJets.Get("Mass","eta", 2);
     Phij_min = FatJets.Get("Mass","phi", 2);
     Mj_min   = FatJets.Get("Mass","msoftdrop", 2);
+    deepHWWMDV1_HallvsQCD_min = FatJets.Get("Mass","deepHWWMDV1_HallvsQCD",2); 
 }
 
 void EDBR2PKUTree::FatJets_P4_DEEP_MD_W_Order_2016() {
