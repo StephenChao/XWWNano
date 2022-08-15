@@ -588,9 +588,10 @@ void EDBR2PKUTree::GenParticles_HWW() {
     }
 
     TLorentzVector AK8_a, AK8_b, AK8_c;
-    AK8_a.SetPtEtaPhiM(PTj_HWWa,Etaj_HWWa,Phij_HWWa,Mj_HWWa);
-    AK8_c.SetPtEtaPhiM(PTj_HWWc,Etaj_HWWc,Phij_HWWc,Mj_HWWc);
-    AK8_b.SetPtEtaPhiM(PTj_HWWb,Etaj_HWWb,Phij_HWWb,Mj_HWWb);
+    AK8_a.SetPtEtaPhiM(PTj_max,Etaj_max,Phij_max,Mj_max);
+    AK8_c.SetPtEtaPhiM(PTj_min,Etaj_min,Phij_min,Mj_min);
+    AK8_b.SetPtEtaPhiM(PTj_mid,Etaj_mid,Phij_mid,Mj_mid);
+    //Here we change the original code to mass order, so we can use that in DECO code.
 
     matchingt_a = t_Collection.matchingAK8(AK8_a);
     matchingW_a = W_Collection.matchingAK8(AK8_a);
@@ -652,7 +653,7 @@ void EDBR2PKUTree::GenParticles_HWW() {
         if( matchingqg_first_c == 1 ){ matchingt_first_c = 6; }
     }
 
-    if( PTj_HWWb > 200 ){
+    if( Nj8 == 3  ){
         matchingt_b = t_Collection.matchingAK8(AK8_b);
         matchingW_b = W_Collection.matchingAK8(AK8_b);
         matchingg_b = g_Collection.matchingAK8(AK8_b);

@@ -160,7 +160,7 @@ void EDBR2PKUTree::Higgs_Matching() {
     z_min = -99;
 
     
-    // gKK_g_Matching(); // this has to run first
+    Higgs_g_Matching(); // this has to run first
     Radion_Matching_taulep(); // this has to run second
     Radion_Matching_taudecay();
     Higgs_Matching_HWW_Ordered();
@@ -189,7 +189,7 @@ void EDBR2PKUTree::Higgs_Matching() {
 
 void EDBR2PKUTree::Radion_Matching_taulep() {
 
-    double dr_WJ=1111110.6;
+    double dr_WJ=0.6;
     double dr=0.6;
     double dR=0.8;
     double dRR=1.6;
@@ -364,8 +364,189 @@ void EDBR2PKUTree::Radion_Matching_taulep() {
     }
 }
 
+
+
+void EDBR2PKUTree::Higgs_Matching_taulep() {
+
+    double dr_WJ=0.6;
+    double dr=0.6;
+    double dR=0.8;
+    double dRR=1.6;
+
+    // cout << "detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr" << (detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr) << endl;
+    // cout << "status_2" << (status_2) << endl;
+    // cout << "status_3" << (status_3) << endl;
+    // cout << "detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR" << (detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR) << endl;
+    // cout << "detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR" << (detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR) << endl;
+    // cout << "detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR" << (detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR) << endl;
+    // cout << "detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR" << (detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR) << endl;
+
+    if( detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr&&status_2==4&&status_3==4&&detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR&&detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR&&detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR&&detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR){
+            R4q_max=1;
+    }
+
+    if(detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr&&status_2==4&&status_3==4&&((detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR)+(detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR)+(detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR)+(detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR))==3&&R4q_max<1){
+            R3q_max=1;
+    }
+
+    if(detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr&&R4q_max<1&&R3q_max<1){
+        if(status_2==4&&status_3>=1&&status_3<=3&&detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR&&detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR&&detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR){
+            Rlqq_max=1;
+        }
+        if(status_3==4&&status_2>=1&&status_2<=3&&detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR&&detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR&&detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR){
+            Rlqq_max=1;
+        }
+    }
+
+    if(((detlaR(etagenwl[0],Etaj_max,phigenwl[0],Phij_max)<dr&&detlaR(genw_q1_eta[0],Etaj_max,genw_q1_phi[0],Phij_max)<dR&&detlaR(genw_q2_eta[0],Etaj_max,genw_q2_phi[0],Phij_max)<dR&&taggenwl[0]==4)||(detlaR(etagenwl[1],Etaj_max,phigenwl[1],Phij_max)<dr&&detlaR(genw_q1_eta[1],Etaj_max,genw_q1_phi[1],Phij_max)<dR&&detlaR(genw_q2_eta[1],Etaj_max,genw_q2_phi[1],Phij_max)<dR&&taggenwl[1]==4)||(detlaR(etagenwl[2],Etaj_max,phigenwl[2],Phij_max)<dr&&detlaR(genw_q1_eta[2],Etaj_max,genw_q1_phi[2],Phij_max)<dR&&detlaR(genw_q2_eta[2],Etaj_max,genw_q2_phi[2],Phij_max)<dR&&taggenwl[2]==4))&&R4q_max<1&&R3q_max<1&&Rlqq_max<1){
+        w_max=1;
+    }
+
+    if(((detlaR(etagenzl[0],Etaj_max,phigenzl[0],Phij_max)<dr&&detlaR(genz_q1_eta[0],Etaj_max,genz_q1_phi[0],Phij_max)<dR&&detlaR(genz_q2_eta[0],Etaj_max,genz_q2_phi[0],Phij_max)<dR&&taggenzl[0]==4)||(detlaR(etagenzl[1],Etaj_max,phigenzl[1],Phij_max)<dr&&detlaR(genz_q1_eta[1],Etaj_max,genz_q1_phi[1],Phij_max)<dR&&detlaR(genz_q2_eta[1],Etaj_max,genz_q2_phi[1],Phij_max)<dR&&taggenzl[1]==4)||(detlaR(etagenzl[2],Etaj_max,phigenzl[2],Phij_max)<dr&&detlaR(genz_q1_eta[2],Etaj_max,genz_q1_phi[2],Phij_max)<dR&&detlaR(genz_q2_eta[2],Etaj_max,genz_q2_phi[2],Phij_max)<dR&&taggenzl[2]==4))&&R4q_max<1&&R3q_max<1&&Rlqq_max<1&&w_max<1){
+        z_max=1;
+    }
+
+    if(detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr&&detlaR(etaGenV_2,Etaj_max,phiGenV_2,Phij_max)<dr_WJ&&detlaR(etaGenV_3,Etaj_max,phiGenV_3,Phij_max)<dr_WJ&&status_2==4&&status_3==4&&((detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR)+(detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR)+(detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR)+(detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR))==2&&R4q_max<1&&R3q_max<1&&Rlqq_max<1&&w_max<1&&z_max<1){
+        R2q_max=1;
+    }
+
+
+    if(detlaR(gen_rad_eta,Etaj_max,gen_rad_phi,Phij_max)<dr&&R4q_max<1&&R3q_max<1&&R2q_max<1&&Rlqq_max<1&&w_max<1&&R2q_max<1&&z_max<1){
+        if(status_2==4&&status_3>=1&&status_3<=3&&((detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR)+(detlaR(etaq22,Etaj_max,phiq22,Phij_max)<dR))==1&&detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR){
+            Rlq_max=1;
+        }
+        if(status_3==4&&status_2>=1&&status_2<=3&&((detlaR(etaq31,Etaj_max,phiq31,Phij_max)<dR)+(detlaR(etaq32,Etaj_max,phiq32,Phij_max)<dR))==1&&detlaR(etaq21,Etaj_max,phiq21,Phij_max)<dR){
+            Rlq_max=1;
+        }
+    }
+
+    if(R4q_max<1&&R3q_max<1&&R2q_max<1&&Rlqq_max<1&&Rlq_max<1&&w_max<1&&z_max<1){
+        u_max=1;
+    }
+
+    
+   
+
+
+    if(detlaR(gen_rad_eta,Etaj_min,gen_rad_phi,Phij_min)<dr&&detlaR(etaGenV_2,Etaj_min,phiGenV_2,Phij_min)<dr_WJ&&detlaR(etaGenV_3,Etaj_min,phiGenV_3,Phij_min)<dr_WJ&&status_2==4&&status_3==4&&detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR&&detlaR(etaq22,Etaj_min,phiq22,Phij_min)<dR&&detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR&&detlaR(etaq32,Etaj_min,phiq32,Phij_min)<dR){
+            R4q_min=1;
+    }
+
+    if(detlaR(gen_rad_eta,Etaj_min,gen_rad_phi,Phij_min)<dr&&detlaR(etaGenV_2,Etaj_min,phiGenV_2,Phij_min)<dr_WJ&&detlaR(etaGenV_3,Etaj_min,phiGenV_3,Phij_min)<dr_WJ&&status_2==4&&status_3==4&&((detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR)+(detlaR(etaq22,Etaj_min,phiq22,Phij_min)<dR)+(detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR)+(detlaR(etaq32,Etaj_min,phiq32,Phij_min)<dR))==3&&R4q_min<1){
+            R3q_min=1;
+    }
+
+    if(detlaR(gen_rad_eta,Etaj_min,gen_rad_phi,Phij_min)<dr&&R4q_min<1&&R3q_min<1){
+        if(status_2==4&&status_3>=1&&status_3<=3&&detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR&&detlaR(etaq22,Etaj_min,phiq22,Phij_min)<dR&&detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR){
+            Rlqq_min=1;
+        }
+        if(status_3==4&&status_2>=1&&status_2<=3&&detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR&&detlaR(etaq32,Etaj_min,phiq32,Phij_min)<dR&&detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR){
+            Rlqq_min=1;
+        }
+    }
+
+    if(((detlaR(etagenwl[0],Etaj_min,phigenwl[0],Phij_min)<dr&&detlaR(genw_q1_eta[0],Etaj_min,genw_q1_phi[0],Phij_min)<dR&&detlaR(genw_q2_eta[0],Etaj_min,genw_q2_phi[0],Phij_min)<dR&&taggenwl[0]==4)||(detlaR(etagenwl[1],Etaj_min,phigenwl[1],Phij_min)<dr&&detlaR(genw_q1_eta[1],Etaj_min,genw_q1_phi[1],Phij_min)<dR&&detlaR(genw_q2_eta[1],Etaj_min,genw_q2_phi[1],Phij_min)<dR&&taggenwl[1]==4)||(detlaR(etagenwl[2],Etaj_min,phigenwl[2],Phij_min)<dr&&detlaR(genw_q1_eta[2],Etaj_min,genw_q1_phi[2],Phij_min)<dR&&detlaR(genw_q2_eta[2],Etaj_min,genw_q2_phi[2],Phij_min)<dR&&taggenwl[2]==4))&&R4q_min<1&&R3q_min<1&&Rlqq_min<1){
+        w_min=1;
+    }
+
+    if(((detlaR(etagenzl[0],Etaj_min,phigenzl[0],Phij_min)<dr&&detlaR(genz_q1_eta[0],Etaj_min,genz_q1_phi[0],Phij_min)<dR&&detlaR(genz_q2_eta[0],Etaj_min,genz_q2_phi[0],Phij_min)<dR&&taggenzl[0]==4)||(detlaR(etagenzl[1],Etaj_min,phigenzl[1],Phij_min)<dr&&detlaR(genz_q1_eta[1],Etaj_min,genz_q1_phi[1],Phij_min)<dR&&detlaR(genz_q2_eta[1],Etaj_min,genz_q2_phi[1],Phij_min)<dR&&taggenzl[1]==4)||(detlaR(etagenzl[2],Etaj_min,phigenzl[2],Phij_min)<dr&&detlaR(genz_q1_eta[2],Etaj_min,genz_q1_phi[2],Phij_min)<dR&&detlaR(genz_q2_eta[2],Etaj_min,genz_q2_phi[2],Phij_min)<dR&&taggenzl[2]==4))&&R4q_min<1&&R3q_min<1&&Rlqq_min<1&&w_min<1){
+        z_min=1;
+    }
+
+    if(detlaR(gen_rad_eta,Etaj_min,gen_rad_phi,Phij_min)<dr&&detlaR(etaGenV_2,Etaj_min,phiGenV_2,Phij_min)<dr_WJ&&detlaR(etaGenV_3,Etaj_min,phiGenV_3,Phij_min)<dr_WJ&&status_2==4&&status_3==4&&((detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR)+(detlaR(etaq22,Etaj_min,phiq22,Phij_min)<dR)+(detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR)+(detlaR(etaq32,Etaj_min,phiq32,Phij_min)<dR))==2&&R4q_min<1&&R3q_min<1&&Rlqq_min<1&&w_min<1&&z_min<1){
+        R2q_min=1;
+    }
+
+
+    if(detlaR(gen_rad_eta,Etaj_min,gen_rad_phi,Phij_min)<dr&&R4q_min<1&&R3q_min<1&&R2q_min<1&&Rlqq_min<1&&w_min<1&&R2q_min<1&&z_min<1){
+        if(status_2==4&&status_3>=1&&status_3<=3&&((detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR)+(detlaR(etaq22,Etaj_min,phiq22,Phij_min)<dR))==1&&detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR){
+            Rlq_min=1;
+        }
+        if(status_3==4&&status_2>=1&&status_2<=3&&((detlaR(etaq31,Etaj_min,phiq31,Phij_min)<dR)+(detlaR(etaq32,Etaj_min,phiq32,Phij_min)<dR))==1&&detlaR(etaq21,Etaj_min,phiq21,Phij_min)<dR){
+            Rlq_min=1;
+        }
+    }
+
+    if(R4q_min<1&&R3q_min<1&&R2q_min<1&&Rlqq_min<1&&Rlq_min<1&&w_min<1&&z_min<1){
+        u_min=1;
+    }
+
+
+    gKK_g_max=0;
+    gKK_g_min=0;
+    // gKK_q_max=0;
+    // gKK_q_min=0;
+
+    if(R3q_max==1||R4q_max==1){
+        t_max=1;
+        t_max_tag=1;
+    }
+    
+    if(R3q_min==1||R4q_min==1){
+               t_min=1;
+               t_min_tag=1; 
+         }
+                                  
+    if(Nj8==3){
+        R4q_mid=-99,R3q_mid=-99,R2q_mid=-99,Rlqq_mid=-99,Rlq_mid=-99,w_mid=-99,u_mid=-99;
+        
+        if(detlaR(gen_rad_eta,Etaj_mid,gen_rad_phi,Phij_mid)<dr&&detlaR(etaGenV_2,Etaj_mid,phiGenV_2,Phij_mid)<dr_WJ&&detlaR(etaGenV_3,Etaj_mid,phiGenV_3,Phij_mid)<dr_WJ&&status_2==4&&status_3==4&&detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR&&detlaR(etaq22,Etaj_mid,phiq22,Phij_mid)<dR&&detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR&&detlaR(etaq32,Etaj_mid,phiq32,Phij_mid)<dR){
+                R4q_mid=1;
+        }
+
+        if(detlaR(gen_rad_eta,Etaj_mid,gen_rad_phi,Phij_mid)<dr&&detlaR(etaGenV_2,Etaj_mid,phiGenV_2,Phij_mid)<dr_WJ&&detlaR(etaGenV_3,Etaj_mid,phiGenV_3,Phij_mid)<dr_WJ&&status_2==4&&status_3==4&&((detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR)+(detlaR(etaq22,Etaj_mid,phiq22,Phij_mid)<dR)+(detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR)+(detlaR(etaq32,Etaj_mid,phiq32,Phij_mid)<dR))==3&&R4q_mid<1){
+                R3q_mid=1;
+        }
+
+        if(detlaR(gen_rad_eta,Etaj_mid,gen_rad_phi,Phij_mid)<dr&&R4q_mid<1&&R3q_mid<1){
+            if(status_2==4&&status_3>=1&&status_3<=3&&detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR&&detlaR(etaq22,Etaj_mid,phiq22,Phij_mid)<dR&&detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR){
+                Rlqq_mid=1;
+            }
+            if(status_3==4&&status_2>=1&&status_2<=3&&detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR&&detlaR(etaq32,Etaj_mid,phiq32,Phij_mid)<dR&&detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR){
+                Rlqq_mid=1;
+            }
+        }
+
+        if(((detlaR(etagenwl[0],Etaj_mid,phigenwl[0],Phij_mid)<dr&&detlaR(genw_q1_eta[0],Etaj_mid,genw_q1_phi[0],Phij_mid)<dR&&detlaR(genw_q2_eta[0],Etaj_mid,genw_q2_phi[0],Phij_mid)<dR&&taggenwl[0]==4)||(detlaR(etagenwl[1],Etaj_mid,phigenwl[1],Phij_mid)<dr&&detlaR(genw_q1_eta[1],Etaj_mid,genw_q1_phi[1],Phij_mid)<dR&&detlaR(genw_q2_eta[1],Etaj_mid,genw_q2_phi[1],Phij_mid)<dR&&taggenwl[1]==4)||(detlaR(etagenwl[2],Etaj_mid,phigenwl[2],Phij_mid)<dr&&detlaR(genw_q1_eta[2],Etaj_mid,genw_q1_phi[2],Phij_mid)<dR&&detlaR(genw_q2_eta[2],Etaj_mid,genw_q2_phi[2],Phij_mid)<dR&&taggenwl[2]==4))&&R4q_mid<1&&R3q_mid<1&&Rlqq_mid<1){
+            w_mid=1;
+        }
+
+        if(((detlaR(etagenzl[0],Etaj_mid,phigenzl[0],Phij_mid)<dr&&detlaR(genz_q1_eta[0],Etaj_mid,genz_q1_phi[0],Phij_mid)<dR&&detlaR(genz_q2_eta[0],Etaj_mid,genz_q2_phi[0],Phij_mid)<dR&&taggenzl[0]==4)||(detlaR(etagenzl[1],Etaj_mid,phigenzl[1],Phij_mid)<dr&&detlaR(genz_q1_eta[1],Etaj_mid,genz_q1_phi[1],Phij_mid)<dR&&detlaR(genz_q2_eta[1],Etaj_mid,genz_q2_phi[1],Phij_mid)<dR&&taggenzl[1]==4)||(detlaR(etagenzl[2],Etaj_mid,phigenzl[2],Phij_mid)<dr&&detlaR(genz_q1_eta[2],Etaj_mid,genz_q1_phi[2],Phij_mid)<dR&&detlaR(genz_q2_eta[2],Etaj_mid,genz_q2_phi[2],Phij_mid)<dR&&taggenzl[2]==4))&&R4q_mid<1&&R3q_mid<1&&Rlqq_mid<1&&w_mid<1){
+            z_mid=1;
+        }
+
+        if(detlaR(gen_rad_eta,Etaj_mid,gen_rad_phi,Phij_mid)<dr&&detlaR(etaGenV_2,Etaj_mid,phiGenV_2,Phij_mid)<dr_WJ&&detlaR(etaGenV_3,Etaj_mid,phiGenV_3,Phij_mid)<dr_WJ&&status_2==4&&status_3==4&&((detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR)+(detlaR(etaq22,Etaj_mid,phiq22,Phij_mid)<dR)+(detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR)+(detlaR(etaq32,Etaj_mid,phiq32,Phij_mid)<dR))==2&&R4q_mid<1&&R3q_mid<1&&Rlqq_mid<1&&w_mid<1&&z_mid<1){
+            R2q_mid=1;
+        }
+
+
+        if(detlaR(gen_rad_eta,Etaj_mid,gen_rad_phi,Phij_mid)<dr&&R4q_mid<1&&R3q_mid<1&&R2q_mid<1&&Rlqq_mid<1&&w_mid<1&&R2q_mid<1&&z_mid<1){
+            if(status_2==4&&status_3>=1&&status_3<=3&&((detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR)+(detlaR(etaq22,Etaj_mid,phiq22,Phij_mid)<dR))==1&&detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR){
+                Rlq_mid=1;
+            }
+            if(status_3==4&&status_2>=1&&status_2<=3&&((detlaR(etaq31,Etaj_mid,phiq31,Phij_mid)<dR)+(detlaR(etaq32,Etaj_mid,phiq32,Phij_mid)<dR))==1&&detlaR(etaq21,Etaj_mid,phiq21,Phij_mid)<dR){
+                Rlq_mid=1;
+            }
+        }
+
+        if(R4q_mid<1&&R3q_mid<1&&R2q_mid<1&&Rlqq_mid<1&&Rlq_mid<1&&w_mid<1&&z_mid<1){
+            u_mid=1;
+        }
+
+        
+        gKK_g_mid=0;
+        // gKK_q_mid=0;
+        if(R3q_mid==1||R4q_mid==1){
+            t_mid=1;
+            t_mid_tag=1;
+        }
+    }
+}
+
+
+
 void EDBR2PKUTree::gKK_g_Matching() {
-    double dr_WJ=1111110.6;
+    double dr_WJ=0.6;
     double dr=0.6;
     double dR=0.8;
     double dRR=1.6;
@@ -387,10 +568,33 @@ void EDBR2PKUTree::gKK_g_Matching() {
     }
 
 }
+void EDBR2PKUTree::Higgs_g_Matching() {
+    double dr_WJ=0.6;
+    double dr=0.6;
+    double dR=0.8;
+    double dRR=1.6;
+
+    
+
+    if( matchingqg_first_a >0 ){
+        gKK_g_max=1;
+    }
+
+    if( matchingqg_first_c >0 ){
+        gKK_g_min=1;
+    }
+
+    if(Nj8 == 3){
+        if( matchingqg_first_b>0 ){
+            gKK_g_mid=1;
+        }
+    }
+
+}
 
 void EDBR2PKUTree::Radion_Matching_taudecay() {
     // considering tau decay in this function
-    double dr_WJ=1111110.6;
+    double dr_WJ=0.6;
     double dr=0.6;
     double dR=0.8;
     double dRR=1.6;
@@ -930,7 +1134,7 @@ void EDBR2PKUTree::Higgs_Matching_HWW_Ordered(){
     u_a = -99; u_b = -99; u_c = -99;
     R3q_taudecay_a = -99; R3q_taudecay_b = -99; R3q_taudecay_c = -99;
 
-    if( PTj_2 > 0 && PTj_3 < 0){
+    if( Nj8==2){
         Int_t *indexTag=new Int_t[2];
         Double_t HWWTagger_sort[2] = { deepHWWMDV1_HallvsQCD_max , deepHWWMDV1_HallvsQCD_min };
         TMath::Sort(2, HWWTagger_sort, indexTag, 1);
@@ -958,7 +1162,7 @@ void EDBR2PKUTree::Higgs_Matching_HWW_Ordered(){
         R3q_taudecay_a = R3q_taudecay_sort[indexTag[0]] ; R3q_taudecay_c = R3q_taudecay_sort[indexTag[1]] ;
     }
 
-    if( PTj_3 > 0 && PTj_4 < 0){
+    if( Nj8==3){
         Int_t *indexTag=new Int_t[3];
         Double_t HWWTagger_sort[3] = { deepHWWMDV1_HallvsQCD_max , deepHWWMDV1_HallvsQCD_mid, deepHWWMDV1_HallvsQCD_min };
         TMath::Sort(3, HWWTagger_sort, indexTag, 1);

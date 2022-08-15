@@ -148,6 +148,7 @@ class EDBR2PKUTree {
    //HWW ordering.
    void Higgs_Matching();
    void Higgs_Matching_taulep();
+   void Higgs_g_Matching();
    void Higgs_Matching_taudecay();
    void Higgs_Matching_HWW_Ordered();
 
