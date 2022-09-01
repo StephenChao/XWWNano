@@ -415,7 +415,7 @@ class VVVProducer(Module):
         # print("nUCSDgoodMu is ",nUCSDgoodMu) #Print for test.
         Selected_leading_muon = False
         if(nUCSDgoodMu>0):
-            Selected_leading_muon= ( (event.Muon_corrected_pt[leading_muon_index]>30) and (event.Muon_miniPFRelIso_all[leading_muon_index]<0.1) and ( (event.Muon_corrected_pt[leading_muon_index]<55 and event.Muon_pfRelIso04_all[leading_muon_index]<0.15) or (event.Muon_corrected_pt[leading_muon_index]>55) ))
+            Selected_leading_muon= ( (event.Muon_corrected_pt[leading_muon_index]>30) and ( (event.Muon_corrected_pt[leading_muon_index]<55 and event.Muon_pfRelIso04_all[leading_muon_index]<0.15) or (event.Muon_corrected_pt[leading_muon_index]>55) ))
 
         if Selected_leading_muon == True:
             return False
