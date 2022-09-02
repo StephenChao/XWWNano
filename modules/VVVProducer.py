@@ -397,9 +397,9 @@ class VVVProducer(Module):
                 muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
                 UCSDlooseMuons.append(muon_v4_temp.Clone()) 
         nUCSDlooseMu = len(UCSDlooseMuons)
-        if not (nUCSDlooseMu==0):
-            return False
-        # veto loose muon.
+#         if not (nUCSDlooseMu==0):
+#             return False
+#         # veto loose muon.
 
         leading_muon_pt = 0
         for imu in range(0, event.nMuon):
