@@ -466,7 +466,7 @@ class VVVProducer(Module):
         Process_1Lepton_Jets(self,event)
 
         Nj8 = ( fatjet1.Pt()>200 ) + ( fatjet2.Pt()>200 ) + ( fatjet3.Pt()>200 )
-        if not ( Nj8 >= 2 ) : return False
+#         if not ( Nj8 >= 2 ) : return False
         if not ( ( fatjet1.M()>40 ) | (fatjet2.M()>40) | (fatjet3.M()>40) ): return False
         if not ( fatjet1.Pt()>400 ): return False
         self.out.fillBranch("Nj8", Nj8)
