@@ -184,22 +184,24 @@ condor submit submit_nanov9.jdl
 
 ## private NanoAOD
 generate customized nanoAOD with addtional fatJets taggers
-1. test condor scripts, for example:
+Firstly, you should initialize your vom certificate, and change the certificate location to your own location, search for `os.system("cp /tmp/x509up` in the `Condor_1.py` and `Condor_2.py`, then change it.
+
+1. Create json file, for example:
 ```
-python Condor.py --DAS DAS_2016_Common --Filesjson 'json file used for storing input files' --createfilejson --debugkeepN 2 --debug
-
-python Condor.py --DAS DAS_2016_Common --Filesjson 'json file used for storing input files' --outputPath "output path" --year 2016 --excutable "exe for UL16 data" --TaskFolder "folders keep condor submit files and log files" --submitsh "submit scripts" --Condor
-
-sh submit_test.sh
+python Condor_1.py --DAS DAS_examples --Filesjson "/stash/user/yuzhe/public/0lepton/custom_nano/data_XWW/Cus_Json/test.json" --createfilejson
 ```
-2. submit condor jobs, for example:
-   mc:
+Both official MiniAOD files and Cmsconnect local files are supported, when you want to add new datasets, you should modify the `samples.py`,`Condor_1.py` and `Condor_2.py` at the same time.
+2. Create condor scripts, for example:
 ```
-python Condor.py --DAS DAS_2016_Common --Filesjson 'json file used for storing input files' --createfilejson
+python Condor_2.py --DAS DAS_examples --Filesjson "
+/stash/user/yuzhe/public/0lepton/custom_nano/data_XWW/Cus_Json/test.json" --outputPath "/stash/user/yuzhe/public/0lepton/custom_nano/data_XWW/Cus_Json/" --year 2018 --excutable "exe_UL18_CUSTNANO.sh" --TaskFolder "log" --submitsh "xx.sh" --Condor
+```
+To be noticed here, you should use `Condor_1.py` for creating the json file, and use `Condor_2.py` for creating the condor scripts.
+Datasets in 2016-2018 for MC and Data should use different executable file in `exec` directory.
+3. Submit the condor scripts, for example:
 
-python Condor.py --DAS DAS_2016_Common --Filesjson 'json file used for storing input files' --outputPath "output path" --year 2016 --excutable "exe for UL16 data" --TaskFolder "folders keep condor submit files and log files" --submitsh "submit scripts" --Condor
-
-sh "submit scripts"
+```-
+/mnt/ceph/connect/user/yuzhe/public/Cus_new/CMSSW_10_6_27/src/PhysicsTools/NanoAODTools/python/postprocessing/analysis/customized_NanoAOD/log/VBFHToWWToAny_M-125_TuneCP5_withDipoleRecoil_13TeV-powheg-jhugen751-pythia8-RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/submit.cmd
 ```
 
 ## HWW/gKK TransferTree
