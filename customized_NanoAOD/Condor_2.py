@@ -2,14 +2,6 @@ import os,sys
 import json
 import re
 from commands import getoutput
-from samples import DAS_2016_Common,DAS_2016_1lepton,DAS_2018_0lepton,DAS_2018A_JetHT,DAS_2018B_JetHT,DAS_2018C_JetHT,DAS_2018D_JetHT,DAS_2017_0lepton,DAS_2017_0lepton_Miss,DAS_2017_Signal,DAS_2016APV_JetHT,DAS_2016_JetHT,DAS_2016APV_0lepton,DAS_2016_0lepton,DAS_2018_0lepton,DAS_2017_JetHT,DAS_2018_JetHT
-from samples import DAS_2016_Signal,DAS_2016APV_Signal,DAS_2018_Signal,DAS_2017_Signal, DAS_top_2016,DAS_top_2016APV,DAS_2016_Signal_Miss
-from samples import DAS_Other_Channels_2016,DAS_Other_Channels_2016APV,DAS_Other_Channels_2017,DAS_Other_Channels_2018,DAS_2018_HG 
-from samples import CMSC_HGSignal_2018, DAS_HGData_2018
-from samples import DAS_2016APV_Signal_VBF, DAS_2016_Signal_VBF, DAS_2017_Signal_VBF, DAS_2018_Signal_VBF
-from samples import DAS_2017_1L_MC, DAS_2017_1L_SYST_MC, DAS_2017_2L_MC
-from samples import DAS_2016_1L_MC, DAS_2016_1L_SYST_MC, DAS_2016_2L_MC
-from samples import DAS_2016APV_1L_MC, DAS_2016APV_1L_SYST_MC, DAS_2016APV_2L_MC
 from samples import DAS_examples, CMSC_examples
 
 from optparse   import OptionParser
