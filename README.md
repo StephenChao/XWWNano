@@ -184,7 +184,7 @@ condor submit submit_nanov9.jdl
 
 ## private NanoAOD
 generate customized nanoAOD with addtional fatJets taggers
-Firstly, you should initialize your vom certificate, and change the certificate location to your own location, search for `os.system("cp /tmp/x509up` in the `Condor_1.py` and `Condor_2.py`, then change it.(For example, in Cmsconnect, type `id` to see your own uid, for me it's `uid=12976(yuzhe)`, and you have to change `x509up_u12976` to your own `x509up_uxxxxx`)
+Firstly, you should initialize your vom certificate, and change the certificate location to your own location, search for `os.system("cp /tmp/x509up` in the `Condor_1.py` and `Condor_2.py`, then change it.(For example, in Cmsconnect, type `id` to see your own uid, for me it's `uid=12976(yuzhe)`, and you have to change `x509up_u12976` to your own `x509up_uxxxxx` in the `Condor.py`)
 
 1. Create json file, for example:
 ```
