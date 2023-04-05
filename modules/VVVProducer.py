@@ -106,7 +106,7 @@ class VVVProducer(Module):
             self.out.branch("genH_b2_q2_mass","F")
             self.out.branch("genH_b2_q2_pdg","F")
 
-        if self.Process_Genparticles : 
+        if self.MODE == "HWW" : 
             self.out.branch("gentop_pt", "F")
             self.out.branch("gentop_eta", "F")
             self.out.branch("gentop_phi", "F")
@@ -248,15 +248,15 @@ class VVVProducer(Module):
         self.out.branch("usenumber2", "I")
         self.out.branch("usenumber3", "I")
         self.out.branch("IDLoose", "I")
-        self.out.branch("jetAK8puppi_dnnTop", "F")
-        self.out.branch("jetAK8puppi_dnnW", "F")
-        self.out.branch("jetAK8puppi_dnnZ", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrTop", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrW", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrH4q", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrZ", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrZbb", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrHbb", "F")
+        # self.out.branch("jetAK8puppi_dnnTop", "F")
+        # self.out.branch("jetAK8puppi_dnnW", "F")
+        # self.out.branch("jetAK8puppi_dnnZ", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrTop", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrW", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrH4q", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrZ", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrZbb", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrHbb", "F")
         self.out.branch("jetAK8puppi_pt", "F")
         self.out.branch("jetAK8puppi_eta", "F")
         self.out.branch("jetAK8puppi_phi", "F")
@@ -269,15 +269,15 @@ class VVVProducer(Module):
         self.out.branch("jetAK8puppi_sd", "F")
         self.out.branch("jetAK8puppi_sd_NoJEC", "F")
         self.out.branch("IDLoose_2", "I")
-        self.out.branch("jetAK8puppi_dnnTop_2", "F")
-        self.out.branch("jetAK8puppi_dnnW_2", "F")
-        self.out.branch("jetAK8puppi_dnnZ_2", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrTop_2", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrW_2", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrH4q_2", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrZ_2", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrZbb_2", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrHbb_2", "F")
+        # self.out.branch("jetAK8puppi_dnnTop_2", "F")
+        # self.out.branch("jetAK8puppi_dnnW_2", "F")
+        # self.out.branch("jetAK8puppi_dnnZ_2", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrTop_2", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrW_2", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrH4q_2", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrZ_2", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrZbb_2", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrHbb_2", "F")
         self.out.branch("jetAK8puppi_pt_2", "F")
         self.out.branch("jetAK8puppi_eta_2", "F")
         self.out.branch("jetAK8puppi_phi_2", "F")
@@ -290,15 +290,15 @@ class VVVProducer(Module):
         self.out.branch("jetAK8puppi_sd_2", "F")
         self.out.branch("jetAK8puppi_sd_NoJEC_2", "F")
         self.out.branch("IDLoose_3", "I")
-        self.out.branch("jetAK8puppi_dnnTop_3", "F")
-        self.out.branch("jetAK8puppi_dnnW_3", "F")
-        self.out.branch("jetAK8puppi_dnnZ_3", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrTop_3", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrW_3", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrH4q_3", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrZ_3", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrZbb_3", "F")
-        self.out.branch("jetAK8puppi_dnnDecorrHbb_3", "F")
+        # self.out.branch("jetAK8puppi_dnnTop_3", "F")
+        # self.out.branch("jetAK8puppi_dnnW_3", "F")
+        # self.out.branch("jetAK8puppi_dnnZ_3", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrTop_3", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrW_3", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrH4q_3", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrZ_3", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrZbb_3", "F")
+        # self.out.branch("jetAK8puppi_dnnDecorrHbb_3", "F")
         self.out.branch("jetAK8puppi_pt_3", "F")
         self.out.branch("jetAK8puppi_eta_3", "F")
         self.out.branch("jetAK8puppi_phi_3", "F")
@@ -311,39 +311,39 @@ class VVVProducer(Module):
         self.out.branch("jetAK8puppi_sd_3", "F")
         self.out.branch("jetAK8puppi_sd_NoJEC_3", "F")
 
-        self.out.branch("FatJetAK8_particleNetMD_QCD", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xbb", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xcc", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xqq", "F")
-        self.out.branch("FatJetAK8_particleNet_H4qvsQCD", "F")
-        self.out.branch("FatJetAK8_particleNet_HbbvsQCD", "F")
-        self.out.branch("FatJetAK8_particleNet_HccvsQCD", "F")
-        self.out.branch("FatJetAK8_particleNet_QCD", "F")
-        self.out.branch("FatJetAK8_particleNet_TvsQCD", "F")
-        self.out.branch("FatJetAK8_particleNet_WvsQCD", "F")
-        self.out.branch("FatJetAK8_particleNet_ZvsQCD", "F")
-        self.out.branch("FatJetAK8_particleNetMD_QCD_2", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xbb_2", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xcc_2", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xqq_2", "F")
-        self.out.branch("FatJetAK8_particleNet_H4qvsQCD_2", "F")
-        self.out.branch("FatJetAK8_particleNet_HbbvsQCD_2", "F")
-        self.out.branch("FatJetAK8_particleNet_HccvsQCD_2", "F")
-        self.out.branch("FatJetAK8_particleNet_QCD_2", "F")
-        self.out.branch("FatJetAK8_particleNet_TvsQCD_2", "F")
-        self.out.branch("FatJetAK8_particleNet_WvsQCD_2", "F")
-        self.out.branch("FatJetAK8_particleNet_ZvsQCD_2", "F")
-        self.out.branch("FatJetAK8_particleNetMD_QCD_3", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xbb_3", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xcc_3", "F")
-        self.out.branch("FatJetAK8_particleNetMD_Xqq_3", "F")
-        self.out.branch("FatJetAK8_particleNet_H4qvsQCD_3", "F")
-        self.out.branch("FatJetAK8_particleNet_HbbvsQCD_3", "F")
-        self.out.branch("FatJetAK8_particleNet_HccvsQCD_3", "F")
-        self.out.branch("FatJetAK8_particleNet_QCD_3", "F")
-        self.out.branch("FatJetAK8_particleNet_TvsQCD_3", "F")
-        self.out.branch("FatJetAK8_particleNet_WvsQCD_3", "F")
-        self.out.branch("FatJetAK8_particleNet_ZvsQCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_QCD", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xbb", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xcc", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xqq", "F")
+        # self.out.branch("FatJetAK8_particleNet_H4qvsQCD", "F")
+        # self.out.branch("FatJetAK8_particleNet_HbbvsQCD", "F")
+        # self.out.branch("FatJetAK8_particleNet_HccvsQCD", "F")
+        # self.out.branch("FatJetAK8_particleNet_QCD", "F")
+        # self.out.branch("FatJetAK8_particleNet_TvsQCD", "F")
+        # self.out.branch("FatJetAK8_particleNet_WvsQCD", "F")
+        # self.out.branch("FatJetAK8_particleNet_ZvsQCD", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_QCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xbb_2", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xcc_2", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xqq_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_H4qvsQCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_HbbvsQCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_HccvsQCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_QCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_TvsQCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_WvsQCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNet_ZvsQCD_2", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_QCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xbb_3", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xcc_3", "F")
+        # self.out.branch("FatJetAK8_particleNetMD_Xqq_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_H4qvsQCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_HbbvsQCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_HccvsQCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_QCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_TvsQCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_WvsQCD_3", "F")
+        # self.out.branch("FatJetAK8_particleNet_ZvsQCD_3", "F")
 
         self.out.branch("ak4jet_hf", "F",lenVar="nJet")
         self.out.branch("ak4jet_pf", "F",lenVar="nJet")
@@ -372,14 +372,14 @@ class VVVProducer(Module):
         if (event.PV_npvsGood<1): return False
 
         if self.is_mc:
-            if self.Process_Genparticles :
+            if self.MODE == "HWW" :
                 Process_1Lepton_GenMatching_Top(self,event);
-                Process_1Lepton_GenMatching_H(self,event);
+                isHWW = Process_1Lepton_GenMatching_H(self,event)
                 Process_1Lepton_GenMatching_W(self,event);
                 Process_1Lepton_GenMatching_Z(self,event);
                 Process_1Lepton_GenMatching_g(self,event);
                 Process_1Lepton_GenMatching_q(self,event);
-
+                if isHWW == False : return False
         lep_pt,lep_eta,lep_phi,lep_m,trackIso,muisolation=-99,-99,-99,-99,-99,-99
 
         
@@ -397,6 +397,7 @@ class VVVProducer(Module):
                 muon_v4_temp.SetPtEtaPhiM(event.Muon_corrected_pt[imu], muons[imu].eta, muons[imu].phi, muons[imu].mass)
                 UCSDlooseMuons.append(muon_v4_temp.Clone()) 
         nUCSDlooseMu = len(UCSDlooseMuons)
+        # print("nUCSDLooseMu is ",nUCSDlooseMu) #Print for test.
         if not (nUCSDlooseMu==0):
             return False
         # veto loose muon.
@@ -415,7 +416,8 @@ class VVVProducer(Module):
         # print("nUCSDgoodMu is ",nUCSDgoodMu) #Print for test.
         Selected_leading_muon = False
         if(nUCSDgoodMu>0):
-            Selected_leading_muon= ( (event.Muon_corrected_pt[leading_muon_index]>30) and (event.Muon_miniPFRelIso_all[leading_muon_index]<0.1) and ( (event.Muon_corrected_pt[leading_muon_index]<55 and event.Muon_pfRelIso04_all[leading_muon_index]<0.15) or (event.Muon_corrected_pt[leading_muon_index]>55) ))
+            # Selected_leading_muon= ( (event.Muon_corrected_pt[leading_muon_index]>30) and (event.Muon_miniPFRelIso_all[leading_muon_index]<0.1) and ( (event.Muon_corrected_pt[leading_muon_index]<55 and event.Muon_pfRelIso04_all[leading_muon_index]<0.15) or (event.Muon_corrected_pt[leading_muon_index]>55) ))
+            Selected_leading_muon= ( (event.Muon_corrected_pt[leading_muon_index]>30) and ( (event.Muon_corrected_pt[leading_muon_index]>=55 and event.Muon_miniPFRelIso_all[leading_muon_index]<0.2) or (event.Muon_corrected_pt[leading_muon_index]<55) ))
 
         if Selected_leading_muon == True:
             return False
@@ -614,18 +616,22 @@ def Process_1Lepton_GenMatching_Top(self,nt):
                         self.out.fillBranch("genantit_b_mass", nt.GenPart_mass[Top_daughter_index[itopd]]);
 
 def Process_1Lepton_GenMatching_H(self,nt):
+    isHWW = True
     for ik in range(0,nt.nGenPart):
         if (nt.GenPart_pdgId[ik] == 25 ):
             if (not (nt.GenPart_statusFlags[ik]&(1<<13))): continue;# isLastCopy
             # print("Higgs's pt is",nt.GenPart_pt[ik]);
             # Select only boosted Higgs.
 #                if(nt.GenPart_pt[ik]<450):break
+            H_daughter_index = Process_1Lepton_GenMatching_daughterindex(nt,ik);
+            HdaughterPDG = [nt.GenPart_pdgId[H_daughter_index[0]],nt.GenPart_pdgId[H_daughter_index[1]]]
+            if (HdaughterPDG != [-24,24]) and (HdaughterPDG != [24,-24]) : 
+                isHWW = False
             self.out.fillBranch("genH_pt", nt.GenPart_pt[ik]);
             self.out.fillBranch("genH_eta", nt.GenPart_eta[ik]);
             self.out.fillBranch("genH_phi", nt.GenPart_phi[ik]);
             self.out.fillBranch("genH_mass", nt.GenPart_mass[ik]);
             
-            H_daughter_index = Process_1Lepton_GenMatching_daughterindex(nt,ik);
             NH_daughter = len(H_daughter_index)
             # print(NH_daughter)
             #For test!!!
@@ -755,6 +761,7 @@ def Process_1Lepton_GenMatching_H(self,nt):
                             self.out.fillBranch("genH_w2_q2_phi", nt.GenPart_phi[H_W2_daughter_index[1]]);
                             self.out.fillBranch("genH_w2_q2_mass", nt.GenPart_mass[H_W2_daughter_index[1]]);
                             self.out.fillBranch("genH_w2_q2_pdg", nt.GenPart_pdgId[H_W2_daughter_index[1]]);                
+    return isHWW
 
 def Process_1Lepton_GenMatching_W(self,nt):
     genw_q1_eta=[]
@@ -1311,15 +1318,15 @@ def Process_fatJets(self,nt):
             usenumber3 = inum; 
     if (usenumber3>-1) :
         self.out.fillBranch("IDLoose", nt.FatJet_jetId[usenumber3]&2);# to be checked; (bit2 is tight?)
-        self.out.fillBranch("jetAK8puppi_dnnTop", nt.FatJet_deepTag_TvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnW", nt.FatJet_deepTag_WvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnZ", nt.FatJet_deepTag_ZvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrTop", nt.FatJet_deepTagMD_TvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrW", nt.FatJet_deepTagMD_WvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrH4q", nt.FatJet_deepTagMD_H4qvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZ", nt.FatJet_deepTagMD_ZvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZbb", nt.FatJet_deepTagMD_ZbbvsQCD[usenumber3]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrHbb", nt.FatJet_deepTagMD_HbbvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnTop", nt.FatJet_deepTag_TvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnW", nt.FatJet_deepTag_WvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnZ", nt.FatJet_deepTag_ZvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrTop", nt.FatJet_deepTagMD_TvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrW", nt.FatJet_deepTagMD_WvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrH4q", nt.FatJet_deepTagMD_H4qvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZ", nt.FatJet_deepTagMD_ZvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZbb", nt.FatJet_deepTagMD_ZbbvsQCD[usenumber3]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrHbb", nt.FatJet_deepTagMD_HbbvsQCD[usenumber3]);
         self.out.fillBranch("jetAK8puppi_pt", nt.FatJet_pt[usenumber3]);
         self.out.fillBranch("jetAK8puppi_eta", nt.FatJet_eta[usenumber3]);
         self.out.fillBranch("jetAK8puppi_phi", nt.FatJet_phi[usenumber3]);
@@ -1331,17 +1338,17 @@ def Process_fatJets(self,nt):
         self.out.fillBranch("jetAK8puppi_tau42", nt.FatJet_tau4[usenumber3]/(nt.FatJet_tau2[usenumber3]+1e-10));
         self.out.fillBranch("jetAK8puppi_sd", nt.FatJet_msoftdrop[usenumber3]);
         self.out.fillBranch("jetAK8puppi_sd_NoJEC", Process_1Lepton_Fatjet_SoftdropMass_NoJEC(nt,usenumber3));
-        self.out.fillBranch("FatJetAK8_particleNetMD_QCD", nt.FatJet_particleNetMD_QCD[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xbb", nt.FatJet_particleNetMD_Xbb[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xcc", nt.FatJet_particleNetMD_Xcc[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xqq", nt.FatJet_particleNetMD_Xqq[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD", nt.FatJet_particleNet_H4qvsQCD[usenumber3]) #to be checked, MD or not
-        self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD", nt.FatJet_particleNet_HbbvsQCD[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD", nt.FatJet_particleNet_HccvsQCD[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNet_QCD", nt.FatJet_particleNet_QCD[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNet_TvsQCD", nt.FatJet_particleNet_TvsQCD[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNet_WvsQCD", nt.FatJet_particleNet_WvsQCD[usenumber3])
-        self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD", nt.FatJet_particleNet_ZvsQCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_QCD", nt.FatJet_particleNetMD_QCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xbb", nt.FatJet_particleNetMD_Xbb[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xcc", nt.FatJet_particleNetMD_Xcc[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xqq", nt.FatJet_particleNetMD_Xqq[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD", nt.FatJet_particleNet_H4qvsQCD[usenumber3]) #to be checked, MD or not
+        # self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD", nt.FatJet_particleNet_HbbvsQCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD", nt.FatJet_particleNet_HccvsQCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNet_QCD", nt.FatJet_particleNet_QCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNet_TvsQCD", nt.FatJet_particleNet_TvsQCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNet_WvsQCD", nt.FatJet_particleNet_WvsQCD[usenumber3])
+        # self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD", nt.FatJet_particleNet_ZvsQCD[usenumber3])
         fatjet1.SetPtEtaPhiM(nt.FatJet_pt[usenumber3],nt.FatJet_eta[usenumber3],nt.FatJet_phi[usenumber3],nt.FatJet_msoftdrop[usenumber3])# to be checked, whether to use sd or sd_NoJEC
         
     usenumber2 = -1; pt_larger=0;
@@ -1354,15 +1361,15 @@ def Process_fatJets(self,nt):
             usenumber2 = inum; 
     if (usenumber2>-1):
         self.out.fillBranch("IDLoose_2", nt.FatJet_jetId[usenumber2]&2);
-        self.out.fillBranch("jetAK8puppi_dnnTop_2", nt.FatJet_deepTag_TvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnW_2", nt.FatJet_deepTag_WvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnZ_2", nt.FatJet_deepTag_ZvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrTop_2", nt.FatJet_deepTagMD_TvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrW_2", nt.FatJet_deepTagMD_WvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrH4q_2", nt.FatJet_deepTagMD_H4qvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZ_2", nt.FatJet_deepTagMD_ZvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZbb_2", nt.FatJet_deepTagMD_ZbbvsQCD[usenumber2]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrHbb_2", nt.FatJet_deepTagMD_HbbvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnTop_2", nt.FatJet_deepTag_TvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnW_2", nt.FatJet_deepTag_WvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnZ_2", nt.FatJet_deepTag_ZvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrTop_2", nt.FatJet_deepTagMD_TvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrW_2", nt.FatJet_deepTagMD_WvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrH4q_2", nt.FatJet_deepTagMD_H4qvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZ_2", nt.FatJet_deepTagMD_ZvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZbb_2", nt.FatJet_deepTagMD_ZbbvsQCD[usenumber2]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrHbb_2", nt.FatJet_deepTagMD_HbbvsQCD[usenumber2]);
         self.out.fillBranch("jetAK8puppi_pt_2", nt.FatJet_pt[usenumber2]);
         self.out.fillBranch("jetAK8puppi_eta_2", nt.FatJet_eta[usenumber2]);
         self.out.fillBranch("jetAK8puppi_phi_2", nt.FatJet_phi[usenumber2]);
@@ -1374,17 +1381,17 @@ def Process_fatJets(self,nt):
         self.out.fillBranch("jetAK8puppi_tau42_2", nt.FatJet_tau4[usenumber2]/(nt.FatJet_tau2[usenumber2]+1e-10));
         self.out.fillBranch("jetAK8puppi_sd_2", nt.FatJet_msoftdrop[usenumber2]);
         self.out.fillBranch("jetAK8puppi_sd_NoJEC_2", Process_1Lepton_Fatjet_SoftdropMass_NoJEC(nt,usenumber2));
-        self.out.fillBranch("FatJetAK8_particleNetMD_QCD_2", nt.FatJet_particleNetMD_QCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xbb_2", nt.FatJet_particleNetMD_Xbb[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xcc_2", nt.FatJet_particleNetMD_Xcc[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xqq_2", nt.FatJet_particleNetMD_Xqq[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD_2", nt.FatJet_particleNet_H4qvsQCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD_2", nt.FatJet_particleNet_HbbvsQCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD_2", nt.FatJet_particleNet_HccvsQCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_QCD_2", nt.FatJet_particleNet_QCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_TvsQCD_2", nt.FatJet_particleNet_TvsQCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_WvsQCD_2", nt.FatJet_particleNet_WvsQCD[usenumber2])
-        self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD_2", nt.FatJet_particleNet_ZvsQCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_QCD_2", nt.FatJet_particleNetMD_QCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xbb_2", nt.FatJet_particleNetMD_Xbb[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xcc_2", nt.FatJet_particleNetMD_Xcc[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xqq_2", nt.FatJet_particleNetMD_Xqq[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD_2", nt.FatJet_particleNet_H4qvsQCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD_2", nt.FatJet_particleNet_HbbvsQCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD_2", nt.FatJet_particleNet_HccvsQCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_QCD_2", nt.FatJet_particleNet_QCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_TvsQCD_2", nt.FatJet_particleNet_TvsQCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_WvsQCD_2", nt.FatJet_particleNet_WvsQCD[usenumber2])
+        # self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD_2", nt.FatJet_particleNet_ZvsQCD[usenumber2])
         fatjet2.SetPtEtaPhiM(nt.FatJet_pt[usenumber2],nt.FatJet_eta[usenumber2],nt.FatJet_phi[usenumber2],nt.FatJet_msoftdrop[usenumber2])# to be checked, whether to use sd or sd_NoJEC
 
     usenumber1 = int(-1); pt_larger=0;
@@ -1398,15 +1405,15 @@ def Process_fatJets(self,nt):
     
     if (usenumber1>-1):
         self.out.fillBranch("IDLoose_3", nt.FatJet_jetId[usenumber1]&2);
-        self.out.fillBranch("jetAK8puppi_dnnTop_3", nt.FatJet_deepTag_TvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnW_3", nt.FatJet_deepTag_WvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnZ_3", nt.FatJet_deepTag_ZvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrTop_3", nt.FatJet_deepTagMD_TvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrW_3", nt.FatJet_deepTagMD_WvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrH4q_3", nt.FatJet_deepTagMD_H4qvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZ_3", nt.FatJet_deepTagMD_ZvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZbb_3", nt.FatJet_deepTagMD_ZbbvsQCD[usenumber1]);
-        self.out.fillBranch("jetAK8puppi_dnnDecorrHbb_3", nt.FatJet_deepTagMD_HbbvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnTop_3", nt.FatJet_deepTag_TvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnW_3", nt.FatJet_deepTag_WvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnZ_3", nt.FatJet_deepTag_ZvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrTop_3", nt.FatJet_deepTagMD_TvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrW_3", nt.FatJet_deepTagMD_WvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrH4q_3", nt.FatJet_deepTagMD_H4qvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZ_3", nt.FatJet_deepTagMD_ZvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZbb_3", nt.FatJet_deepTagMD_ZbbvsQCD[usenumber1]);
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrHbb_3", nt.FatJet_deepTagMD_HbbvsQCD[usenumber1]);
         self.out.fillBranch("jetAK8puppi_pt_3", nt.FatJet_pt[usenumber1]);
         self.out.fillBranch("jetAK8puppi_eta_3", nt.FatJet_eta[usenumber1]);
         self.out.fillBranch("jetAK8puppi_phi_3", nt.FatJet_phi[usenumber1]);
@@ -1418,29 +1425,29 @@ def Process_fatJets(self,nt):
         self.out.fillBranch("jetAK8puppi_tau42_3", nt.FatJet_tau4[usenumber1]/(nt.FatJet_tau2[usenumber1]+1e-10));
         self.out.fillBranch("jetAK8puppi_sd_3", nt.FatJet_msoftdrop[usenumber1]);
         self.out.fillBranch("jetAK8puppi_sd_NoJEC_3", Process_1Lepton_Fatjet_SoftdropMass_NoJEC(nt,usenumber1));
-        self.out.fillBranch("FatJetAK8_particleNetMD_QCD_3", nt.FatJet_particleNetMD_QCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xbb_3", nt.FatJet_particleNetMD_Xbb[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xcc_3", nt.FatJet_particleNetMD_Xcc[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xqq_3", nt.FatJet_particleNetMD_Xqq[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD_3", nt.FatJet_particleNet_H4qvsQCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD_3", nt.FatJet_particleNet_HbbvsQCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD_3", nt.FatJet_particleNet_HccvsQCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_QCD_3", nt.FatJet_particleNet_QCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_TvsQCD_3", nt.FatJet_particleNet_TvsQCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_WvsQCD_3", nt.FatJet_particleNet_WvsQCD[usenumber1])
-        self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD_3", nt.FatJet_particleNet_ZvsQCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_QCD_3", nt.FatJet_particleNetMD_QCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xbb_3", nt.FatJet_particleNetMD_Xbb[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xcc_3", nt.FatJet_particleNetMD_Xcc[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xqq_3", nt.FatJet_particleNetMD_Xqq[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD_3", nt.FatJet_particleNet_H4qvsQCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD_3", nt.FatJet_particleNet_HbbvsQCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD_3", nt.FatJet_particleNet_HccvsQCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_QCD_3", nt.FatJet_particleNet_QCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_TvsQCD_3", nt.FatJet_particleNet_TvsQCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_WvsQCD_3", nt.FatJet_particleNet_WvsQCD[usenumber1])
+        # self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD_3", nt.FatJet_particleNet_ZvsQCD[usenumber1])
         fatjet3.SetPtEtaPhiM(nt.FatJet_pt[usenumber1],nt.FatJet_eta[usenumber1],nt.FatJet_phi[usenumber1],nt.FatJet_msoftdrop[usenumber1])# to be checked, whether to use sd or sd_NoJEC
     else :
         self.out.fillBranch("IDLoose_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnTop_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnW_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnZ_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnDecorrTop_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnDecorrW_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnDecorrH4q_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZ_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnDecorrZbb_3", -99)
-        self.out.fillBranch("jetAK8puppi_dnnDecorrHbb_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnTop_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnW_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnZ_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrTop_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrW_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrH4q_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZ_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrZbb_3", -99)
+        # self.out.fillBranch("jetAK8puppi_dnnDecorrHbb_3", -99)
         self.out.fillBranch("jetAK8puppi_pt_3", -99)
         self.out.fillBranch("jetAK8puppi_eta_3", -99)
         self.out.fillBranch("jetAK8puppi_phi_3", -99)
@@ -1452,17 +1459,17 @@ def Process_fatJets(self,nt):
         self.out.fillBranch("jetAK8puppi_tau42_3", -99)
         self.out.fillBranch("jetAK8puppi_sd_3", -99)
         self.out.fillBranch("jetAK8puppi_sd_NoJEC_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNetMD_QCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xbb_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xcc_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNetMD_Xqq_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_QCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_TvsQCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_WvsQCD_3", -99)
-        self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNetMD_QCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xbb_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xcc_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNetMD_Xqq_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_H4qvsQCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_HbbvsQCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_HccvsQCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_QCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_TvsQCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_WvsQCD_3", -99)
+        # self.out.fillBranch("FatJetAK8_particleNet_ZvsQCD_3", -99)
 
     self.out.fillBranch("usenumber1", usenumber1);
     self.out.fillBranch("usenumber2", usenumber2);
