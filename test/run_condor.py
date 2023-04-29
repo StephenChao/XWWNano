@@ -104,7 +104,7 @@ def main():
     if opt.year in ["UL2016F","UL2016G","UL2016H"]:
       p = PostProcessor(opt.output, [opt.inputs], modules=[muonScaleRes2016b(),jetmetCorrector(),jmeCorrections(),VVV2016()], provenance=True,fwkJobReport=True, jsonInput=jsoninput,outputbranchsel="keep_and_drop.txt")
     
-    if opt.year in ['UL2017B','UL2017C','UL2017D','UL2017E','UL2017F',]:
+    if opt.year in ['UL2017B','UL2017C','UL2017D','UL2017E','UL2017F','UL2017G','UL2017H']:
       p = PostProcessor(opt.output, [opt.inputs], modules=[muonScaleRes2017(),jetmetCorrector(),jmeCorrections(),VVV2017()], provenance=True,fwkJobReport=True, jsonInput=jsoninput,outputbranchsel="keep_and_drop.txt")
 
     if opt.year in ['UL2018A','UL2018B','UL2018C','UL2018D']:
