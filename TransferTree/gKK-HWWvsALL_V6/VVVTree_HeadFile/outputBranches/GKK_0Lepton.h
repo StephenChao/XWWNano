@@ -840,6 +840,9 @@ void EDBR2PKUTree::OutputBranches_HWW() {
       ExTree->Branch("t_a",&t_a,"t_a/I");
       ExTree->Branch("t_b",&t_b,"t_b/I");
       ExTree->Branch("t_c",&t_c,"t_c/I");
+      ExTree->Branch("tlqq_a",&tlqq_a,"tlqq_a/I"); // Add tlqq matching
+      ExTree->Branch("tlqq_b",&tlqq_b,"tlqq_b/I");
+      ExTree->Branch("tlqq_c",&tlqq_c,"tlqq_c/I"); 
       ExTree->Branch("z_a",&z_a,"z_a/I");
       ExTree->Branch("z_b",&z_b,"z_b/I");
       ExTree->Branch("z_c",&z_c,"z_c/I");

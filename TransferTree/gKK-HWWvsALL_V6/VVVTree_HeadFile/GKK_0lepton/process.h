@@ -789,7 +789,8 @@ void EDBR2PKUTree::HEMFilter() {
     else{
         if(YEAR_g.Contains("2018")){
             Double_t d = gRandom->Rndm(0);
-            cout << "HEMFilter random number " << d << endl;
+           // cout << "HEMFilter random number " << d << endl;
+           // removed cout to faster the code
             if(d < 0.632){
                 CheckHEM = true ;
             }

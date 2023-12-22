@@ -529,6 +529,7 @@ Int_t R3q_a , R3q_b , R3q_c;
 Int_t R2q_a , R2q_b , R2q_c;
 Int_t w_a , w_b , w_c;
 Int_t t_a , t_b , t_c;
+Int_t tlqq_a, tlqq_b, tlqq_c; // Add tlqq matching
 Int_t z_a , z_b , z_c;
 Int_t Rlqq_a , Rlqq_b , Rlqq_c;
 Int_t Rlq_a , Rlq_b , Rlq_c;
@@ -537,7 +538,7 @@ Int_t u_a , u_b , u_c;
 Int_t R3q_taudecay_a , R3q_taudecay_b , R3q_taudecay_c;
 
 Int_t           z_max,t_max,t_max_tag,g_max,q_max,z_mid,t_mid,t_mid_tag,g_mid,q_mid,z_min,t_min,t_min_tag,g_min,q_min,z_4,t_4,t_4_tag,w_4,g_4,q_4,u_4;
-
+Int_t           tlqq_max, tlqq_mid, tlqq_min;
 Int_t           t34_max_tag,t34_mid_tag,t34_min_tag,t34_4_tag;
 
 float FatJet_pt_1;
