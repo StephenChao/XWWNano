@@ -69,14 +69,14 @@ def main():
   
   if opt.ismc:
     if "2016" in opt.year:
-      jmeCorrections  = createJMECorrector(opt.ismc, "UL2016", opt.year[4:].upper(), "Total", "AK8PFPuppi")
-      jetmetCorrector = createJMECorrector(opt.ismc, "UL2016", jesUncert="Total", metBranchName="MET", splitJER=False, applyHEMfix=True)
+      jmeCorrections  = createJMECorrector(opt.ismc, "UL2016", opt.year[4:].upper(), "All", "AK8PFPuppi")
+      jetmetCorrector = createJMECorrector(opt.ismc, "UL2016", jesUncert="Total", metBranchName="MET", splitJER=True, applyHEMfix=True)
     if "2017" in opt.year:
-      jmeCorrections  = createJMECorrector(opt.ismc, "UL2017", opt.year[4:].upper(), "Total","AK8PFPuppi")
-      jetmetCorrector = createJMECorrector(opt.ismc, "UL2017", jesUncert="Total", metBranchName="MET", splitJER=False, applyHEMfix=True)
+      jmeCorrections  = createJMECorrector(opt.ismc, "UL2017", opt.year[4:].upper(), "All","AK8PFPuppi")
+      jetmetCorrector = createJMECorrector(opt.ismc, "UL2017", jesUncert="Total", metBranchName="MET", splitJER=True, applyHEMfix=True)
     if "2018" in opt.year:
-      jmeCorrections  = createJMECorrector(opt.ismc, "UL2018", opt.year[4:].upper(), "Total","AK8PFPuppi")
-      jetmetCorrector = createJMECorrector(opt.ismc, "UL2018", jesUncert="Total", metBranchName="MET", splitJER=False, applyHEMfix=True)
+      jmeCorrections  = createJMECorrector(opt.ismc, "UL2018", opt.year[4:].upper(), "All","AK8PFPuppi")
+      jetmetCorrector = createJMECorrector(opt.ismc, "UL2018", jesUncert="Total", metBranchName="MET", splitJER=True, applyHEMfix=True)
 
   if opt.ismc:
 
@@ -96,7 +96,7 @@ def main():
   if not (opt.ismc):
     year_list = ['UL2016_preVFPB','UL2016_preVFPC','UL2016_preVFPD','UL2016_preVFPE','UL2016_preVFPF','UL2016F','UL2016G','UL2016H','UL2017B','UL2017C','UL2017D','UL2017E','UL2017F','UL2018A','UL2018B','UL2018C','UL2018D']
     if opt.year in year_list : 
-      jmeCorrections  = createJMECorrector(opt.ismc,  dataYear=opt.year[:-1], runPeriod=opt.year[-1:],  jesUncert="Total", jetType="AK8PFPuppi",)
+      jmeCorrections  = createJMECorrector(opt.ismc,  dataYear=opt.year[:-1], runPeriod=opt.year[-1:],  jesUncert="All", jetType="AK8PFPuppi",)
       jetmetCorrector = createJMECorrector(opt.ismc,   dataYear=opt.year[:-1], runPeriod=opt.year[-1:], metBranchName="MET")
     if opt.year in ["UL2016_preVFPB","UL2016_preVFPC","UL2016_preVFPD","UL2016_preVFPE","UL2016_preVFPF"]:
       p = PostProcessor(opt.output, [opt.inputs], modules=[muonScaleRes2016a(),jetmetCorrector(),jmeCorrections(),VVV2016()], provenance=True,fwkJobReport=True, jsonInput=jsoninput,outputbranchsel="keep_and_drop.txt")
