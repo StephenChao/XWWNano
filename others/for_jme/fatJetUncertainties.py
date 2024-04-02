@@ -154,9 +154,8 @@ class fatJetUncertaintiesProducer(Module):
         elif jesUncertainties[0] == "Merged" and not self.isData:
             #according to the attention content here: https://twiki.cern.ch/twiki/bin/view/CMS/JECUncertaintySources#Run_2_reduced_set_of_uncertainty, V2 string is added
             self.jesUncertaintyInputFileName = "RegroupedV2_" + \
-                #globalTag + "_UncertaintySources_" + jetType + ".txt"
-                #according to the cms-talk content here:https://cms-talk.web.cern.ch/t/jecs-for-ak8/36525, "AK4PFchs" is used here for both AK8 and AK4
                 globalTag + "_UncertaintySources_" + "AK4PFchs" + ".txt"
+                #according to the cms-talk content here:https://cms-talk.web.cern.ch/t/jecs-for-ak8/36525, "AK4PFchs" is used here for both AK8 and AK4 jet type
         else:
             self.jesUncertaintyInputFileName = globalTag + \
                 "_UncertaintySources_" + jetType + ".txt"
