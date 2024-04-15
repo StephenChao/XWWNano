@@ -134,8 +134,12 @@ def createJMECorrector(isMC=True,
 
     jmeUncert_ = [x for x in jesUncert.split(",")]
     jerTag_ = jerTagsMC[dataYear]
-    jmrValues_ = jmrValues[dataYear]
-    jmsValues_ = jmsValues[dataYear]
+    if not isMC:
+        jmrValues_ = jmrValues[dataYear]
+        jmsValues_ = jmsValues[dataYear]
+    else: 
+        jmrValues_ = jmrValues[dataYear[2:]]
+        jmsValues_ = jmsValues[dataYear[2:]]
     archiveTag_ = archiveTagsDATA[dataYear]
     met_ = metBranchName
     print('JEC : ' + str(jecTag_) + '\t JER : ' + str(jerTag_))
