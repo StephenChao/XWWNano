@@ -140,6 +140,8 @@ def createJMECorrector(isMC=True,
     else: 
         jmrValues_ = jmrValues[dataYear[2:]]
         jmsValues_ = jmsValues[dataYear[2:]]
+        print("Now JMR value is",jmrValues_)
+        print("Now JMS value is",jmsValues_)
     archiveTag_ = archiveTagsDATA[dataYear]
     met_ = metBranchName
     print('JEC : ' + str(jecTag_) + '\t JER : ' + str(jerTag_))
