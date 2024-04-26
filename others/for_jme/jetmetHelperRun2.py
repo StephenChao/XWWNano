@@ -14,7 +14,7 @@ jecTagsMC = {
     '2018': 'Autumn18_V19_MC',
     'UL2016_preVFP': 'Summer19UL16APV_V7_MC',
     'UL2016': 'Summer19UL16_V7_MC',
-    'UL2017': 'Summer19UL17_V5_MC',
+    'UL2017': 'Summer19UL17_V6_MC',
     'UL2018': 'Summer19UL18_V5_MC',
 }
 
