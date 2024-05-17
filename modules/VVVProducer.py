@@ -455,7 +455,7 @@ class VVVProducer(Module):
         # print("nUCSDgoodEle is ",nUCSDgoodEle) #Print for test.
         Selected_leading_ele = False
         if(nUCSDgoodEle>0):
-            Selected_leading_ele = ( (electrons[iele].pt>40) and ( (electrons[iele].pt<120 and electrons[iele].pfRelIso03_all<0.15) or (electrons[iele].pt>=120) )  ) 
+            Selected_leading_ele = ( (electrons[iele].pt>38) and ( (electrons[iele].pt<120 and electrons[iele].pfRelIso03_all<0.15) or (electrons[iele].pt>=120) )  ) 
         if Selected_leading_ele == True:
             return False
         # veto leading ele.
