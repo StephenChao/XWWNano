@@ -39,7 +39,7 @@ drop FatJet_deepHWWMDV1*
 # drop MET_sumPtUnclustered 
 # drop TkMET_*
 
-drop Electron_*
+# drop Electron_*
 
 drop GenIsolated*
 
@@ -62,7 +62,7 @@ keep LHEScaleWeight
 keep LHEWeight_originalXWGTUP
 keep LHE_AlphaS
 
-drop Muon_*
+# drop Muon_*
 
 drop SoftActivity*
 

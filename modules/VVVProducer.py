@@ -239,7 +239,6 @@ class VVVProducer(Module):
             self.out.branch("massgenq5f", "F",10)
             self.out.branch("ptgenq5l", "F",10)
 
-
         self.out.branch("nLooseMu", "I")
         self.out.branch("nLooseEle", "I")
         self.out.branch("MET_et", "F")
@@ -248,15 +247,7 @@ class VVVProducer(Module):
         self.out.branch("usenumber2", "I")
         self.out.branch("usenumber3", "I")
         self.out.branch("IDLoose", "I")
-        # self.out.branch("jetAK8puppi_dnnTop", "F")
-        # self.out.branch("jetAK8puppi_dnnW", "F")
-        # self.out.branch("jetAK8puppi_dnnZ", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrTop", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrW", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrH4q", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrZ", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrZbb", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrHbb", "F")
+
         self.out.branch("jetAK8puppi_pt", "F")
         self.out.branch("jetAK8puppi_eta", "F")
         self.out.branch("jetAK8puppi_phi", "F")
@@ -269,15 +260,7 @@ class VVVProducer(Module):
         self.out.branch("jetAK8puppi_sd", "F")
         self.out.branch("jetAK8puppi_sd_NoJEC", "F")
         self.out.branch("IDLoose_2", "I")
-        # self.out.branch("jetAK8puppi_dnnTop_2", "F")
-        # self.out.branch("jetAK8puppi_dnnW_2", "F")
-        # self.out.branch("jetAK8puppi_dnnZ_2", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrTop_2", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrW_2", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrH4q_2", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrZ_2", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrZbb_2", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrHbb_2", "F")
+
         self.out.branch("jetAK8puppi_pt_2", "F")
         self.out.branch("jetAK8puppi_eta_2", "F")
         self.out.branch("jetAK8puppi_phi_2", "F")
@@ -290,15 +273,7 @@ class VVVProducer(Module):
         self.out.branch("jetAK8puppi_sd_2", "F")
         self.out.branch("jetAK8puppi_sd_NoJEC_2", "F")
         self.out.branch("IDLoose_3", "I")
-        # self.out.branch("jetAK8puppi_dnnTop_3", "F")
-        # self.out.branch("jetAK8puppi_dnnW_3", "F")
-        # self.out.branch("jetAK8puppi_dnnZ_3", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrTop_3", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrW_3", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrH4q_3", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrZ_3", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrZbb_3", "F")
-        # self.out.branch("jetAK8puppi_dnnDecorrHbb_3", "F")
+
         self.out.branch("jetAK8puppi_pt_3", "F")
         self.out.branch("jetAK8puppi_eta_3", "F")
         self.out.branch("jetAK8puppi_phi_3", "F")
@@ -310,40 +285,6 @@ class VVVProducer(Module):
         self.out.branch("jetAK8puppi_tau42_3", "F")
         self.out.branch("jetAK8puppi_sd_3", "F")
         self.out.branch("jetAK8puppi_sd_NoJEC_3", "F")
-
-        # self.out.branch("FatJetAK8_particleNetMD_QCD", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xbb", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xcc", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xqq", "F")
-        # self.out.branch("FatJetAK8_particleNet_H4qvsQCD", "F")
-        # self.out.branch("FatJetAK8_particleNet_HbbvsQCD", "F")
-        # self.out.branch("FatJetAK8_particleNet_HccvsQCD", "F")
-        # self.out.branch("FatJetAK8_particleNet_QCD", "F")
-        # self.out.branch("FatJetAK8_particleNet_TvsQCD", "F")
-        # self.out.branch("FatJetAK8_particleNet_WvsQCD", "F")
-        # self.out.branch("FatJetAK8_particleNet_ZvsQCD", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_QCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xbb_2", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xcc_2", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xqq_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_H4qvsQCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_HbbvsQCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_HccvsQCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_QCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_TvsQCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_WvsQCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNet_ZvsQCD_2", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_QCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xbb_3", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xcc_3", "F")
-        # self.out.branch("FatJetAK8_particleNetMD_Xqq_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_H4qvsQCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_HbbvsQCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_HccvsQCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_QCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_TvsQCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_WvsQCD_3", "F")
-        # self.out.branch("FatJetAK8_particleNet_ZvsQCD_3", "F")
 
         self.out.branch("ak4jet_hf", "F",lenVar="nJet")
         self.out.branch("ak4jet_pf", "F",lenVar="nJet")
@@ -437,8 +378,9 @@ class VVVProducer(Module):
                 UCSDlooseElectrons.append(electron_v4_temp.Clone())
         nUCSDLooseEle = len(UCSDlooseElectrons)
 
-        if not (nUCSDLooseEle==0):
-            return False
+        #temporarily remove the ele veto for EGM test
+        # if not (nUCSDLooseEle==0):
+        #     return False
         #veto loose ele.
 
         leading_ele_pt = 0
@@ -456,8 +398,10 @@ class VVVProducer(Module):
         Selected_leading_ele = False
         if(nUCSDgoodEle>0):
             Selected_leading_ele = ( (electrons[iele].pt>38) and ( (electrons[iele].pt<120 and electrons[iele].pfRelIso03_all<0.15) or (electrons[iele].pt>=120) )  ) 
-        if Selected_leading_ele == True:
-            return False
+        
+        #temporarily remove the ele veto for EGM test
+        # if Selected_leading_ele == True:
+        #     return False
         # veto leading ele.
         # Added UCSD veto here.
 
