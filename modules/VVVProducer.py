@@ -41,6 +41,16 @@ class VVVProducer(Module):
             self.out.branch("genH_w2_phi","F")
             self.out.branch("genH_w2_mass","F")
 
+            self.out.branch("genH_z1_pt","F")
+            self.out.branch("genH_z1_eta","F")
+            self.out.branch("genH_z1_phi","F")
+            self.out.branch("genH_z1_mass","F")
+
+            self.out.branch("genH_z2_pt","F")
+            self.out.branch("genH_z2_eta","F")
+            self.out.branch("genH_z2_phi","F")
+            self.out.branch("genH_z2_mass","F")
+
             self.out.branch("genH_b1_pt","F")
             self.out.branch("genH_b1_eta","F")
             self.out.branch("genH_b1_phi","F")
@@ -626,7 +636,7 @@ def Process_1Lepton_GenMatching_H(self,nt):
             H_daughter_index = Process_1Lepton_GenMatching_daughterindex(nt,ik);
             HdaughterPDG = [nt.GenPart_pdgId[H_daughter_index[0]],nt.GenPart_pdgId[H_daughter_index[1]]]
             if (HdaughterPDG != [-24,24]) and (HdaughterPDG != [24,-24]) : 
-                isHWW = False
+                isHWW = True
             self.out.fillBranch("genH_pt", nt.GenPart_pt[ik]);
             self.out.fillBranch("genH_eta", nt.GenPart_eta[ik]);
             self.out.fillBranch("genH_phi", nt.GenPart_phi[ik]);
@@ -731,7 +741,7 @@ def Process_1Lepton_GenMatching_H(self,nt):
                             self.out.fillBranch("genH_w1_q2_phi", nt.GenPart_phi[H_W1_daughter_index[1]]);
                             self.out.fillBranch("genH_w1_q2_mass", nt.GenPart_mass[H_W1_daughter_index[1]]);
                             self.out.fillBranch("genH_w1_q2_pdg", nt.GenPart_pdgId[H_W1_daughter_index[1]]);
-                
+
 
                     if(nt.GenPart_pdgId[H_daughter_index[itopd]]==-24):
                         LastCopyW2id = Process_1Lepton_GenMatching_LastCopy(nt,H_daughter_index[itopd]);
@@ -761,6 +771,25 @@ def Process_1Lepton_GenMatching_H(self,nt):
                             self.out.fillBranch("genH_w2_q2_phi", nt.GenPart_phi[H_W2_daughter_index[1]]);
                             self.out.fillBranch("genH_w2_q2_mass", nt.GenPart_mass[H_W2_daughter_index[1]]);
                             self.out.fillBranch("genH_w2_q2_pdg", nt.GenPart_pdgId[H_W2_daughter_index[1]]);                
+
+                    # HZZ
+                    if(nt.GenPart_pdgId[H_daughter_index[itopd]]==23):
+                        LastCopyZ1id = Process_1Lepton_GenMatching_LastCopy(nt,H_daughter_index[itopd]);
+
+                        self.out.fillBranch("genH_z1_pt", nt.GenPart_pt[LastCopyZ1id]);
+                        self.out.fillBranch("genH_z1_eta", nt.GenPart_eta[LastCopyZ1id]);
+                        self.out.fillBranch("genH_z1_phi", nt.GenPart_phi[LastCopyZ1id]);
+                        self.out.fillBranch("genH_z1_mass", nt.GenPart_mass[LastCopyZ1id]);
+
+
+                    if(nt.GenPart_pdgId[H_daughter_index[itopd]]==-23):
+                        LastCopyZ2id = Process_1Lepton_GenMatching_LastCopy(nt,H_daughter_index[itopd]);
+
+                        self.out.fillBranch("genH_z2_pt", nt.GenPart_pt[LastCopyZ2id]);
+                        self.out.fillBranch("genH_z2_eta", nt.GenPart_eta[LastCopyZ2id]);
+                        self.out.fillBranch("genH_z2_phi", nt.GenPart_phi[LastCopyZ2id]);
+                        self.out.fillBranch("genH_z2_mass", nt.GenPart_mass[LastCopyZ2id]);    
+    
     return isHWW
 
 def Process_1Lepton_GenMatching_W(self,nt):
